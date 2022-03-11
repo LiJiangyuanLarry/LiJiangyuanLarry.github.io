@@ -1,37 +1,41 @@
-## Welcome to GitHub Pages
+## 李江远 LI Jiangyuan
 
-You can use the [editor on GitHub](https://github.com/LiJiangyuanLarry/LiJiangyuanLarry.github.io/edit/main/README.md) to maintain and preview the content for your website in Markdown files.
+# 李江远 LI Jiangyuan  
+我是一名任教于上海财经大学金融学院的助理教授，研究兴趣为资产定价，机器学习方法应用及中国市场专题。  
+I am an **Assistant Professor of Finance** at School of Finance, **Shanghai University of Finance and Economics**. My research interests lie in asset pricing, machine-learning and Chinese Market.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+# 研究成果 Publication
 
-### Markdown
+- Are disagreements agreeable? Evidence from information aggregation
+  - **Journal of Financial Economics**, 141(1), 2021, 83-101, with Dashan Huang, and Liyao Wang
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+- Time series momentum: Is it there?
+  - **Journal of Financial Economics**, 135 (3), 2020, 774-794, with Dashan Huang, Liyao Wang, and Guofu Zhou
 
-```markdown
-Syntax highlighted code block
+- Compensation and risk: A perspective on the Lake Wobegon effect
+  - **Journal of Banking and Finance**, 108, 2019, with Jinqiang Yang, and Zhentao Zou
 
-# Header 1
-## Header 2
-### Header 3
+- Hedge fund’s dynamic leverage decisions under time-inconsistent preferences
+  - **European Journal of Operational Research**, 284(2), 2020, 779-791, with Bo Liu, Jinqiang Yang, and Zhentao Zou
 
-- Bulleted
-- List
+# 数据开源 Data
 
-1. Numbered
-2. List
+- 中国波指项目 China VIV
+  - 严格采用CBOE和上交所的指数构建方法，制作了基于中国市场上证50ETF期权和沪深300指数期权的China-VIX（CVIX）。
 
-**Bold** and _Italic_ and `Code` text
+![cvix_all](https://user-images.githubusercontent.com/61366724/157781724-474efa66-705e-4220-839d-a3425db2e700.png)
+[CVIX.csv](https://github.com/LiJiangyuanLarry/LiJiangyuanLarry.github.io/files/8228156/CVIX.csv)
 
-[Link](url) and ![Image](src)
-```
 
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
+# 联系方式 Contacts  
+李江远  
+助理教授  
+上海财经大学金融学院  
+上海市杨浦区武东路100号  
+邮箱：lijiangyuan at mail.sufe.edu.cn
 
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/LiJiangyuanLarry/LiJiangyuanLarry.github.io/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+LI Jiangyuan  
+Assistant Professor  
+School of Finance, Shanghai University of Finance and Economics  
+100 Wudong Road, Yangpu District, Shagnhai, China, 200433  
+Email：lijiangyuan at mail.sufe.edu.cn  
