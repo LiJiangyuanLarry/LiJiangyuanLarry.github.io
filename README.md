@@ -20,7 +20,7 @@ I am an **Assistant Professor of Finance** at School of Finance, **Shanghai Univ
 
 # 数据开源 Data
 
-- 中国波指项目 China VIV
+- 中国波指项目 China VIX
   - 严格采用CBOE和上交所的指数构建方法，制作了基于中国市场上证50ETF期权和沪深300指数期权的China-VIX（CVIX）。
 
 ![cvix_all](https://user-images.githubusercontent.com/61366724/157781724-474efa66-705e-4220-839d-a3425db2e700.png)
