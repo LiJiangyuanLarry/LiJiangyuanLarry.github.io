@@ -25,7 +25,7 @@ jobs:
       - run: python website_generator.py
       - uses: TiesdeKok/html2pdf@master #markwilson/html2pdf@v1.0
         with:
-          htmlPath: 'resume.html'
+          htmlPath: 'public/resume.html'
           pdfName: 'public/Vitae.pdf'
       - uses: stefanzweifel/git-auto-commit-action@v4
       - name: Setup Pages
