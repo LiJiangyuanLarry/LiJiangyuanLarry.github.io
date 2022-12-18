@@ -8,7 +8,6 @@ concurrency:
   group: "pages"
   cancel-in-progress: true
 
-# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
   contents: write
   pages: write
@@ -27,7 +26,7 @@ jobs:
       - uses: TiesdeKok/html2pdf@master #markwilson/html2pdf@v1.0
         with:
           htmlPath: 'resume.html'
-          pdfName: 'Vitae'
+          pdfName: 'public/Vitae.pdf'
       - uses: stefanzweifel/git-auto-commit-action@v4
       - name: Setup Pages
         uses: actions/configure-pages@v2
@@ -45,6 +44,6 @@ jobs:
           username: ${{ secrets.CV_LOC_USERNAME }}
           password: ${{ secrets.CV_LOC_PW }}
           port: ${{ secrets.CV_LOC_PORT }}
-          source: "Vitae.pdf"
+          source: "public/Vitae.pdf"
           target: ${{ secrets.CV_LOC_FOLDER }}
           tar_tmp_path : ${{ secrets.CV_LOC_FOLDER }}

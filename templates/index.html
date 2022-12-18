@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/simple.css">
+    <title>Ties de Kok</title>
+
+
+</head>
+<body>
+  <header>
+    <h1>Ties de Kok</h1>
+    <p>Assistant Professor in Accounting</p>
+    <p>University of Washington</p>
+    
+    <nav>
+        <a href="/" class="current">About me</a>
+        <a href="/research.html" >Research</a>
+        <a href="/code_and_data.html" >Code & Data</a>
+        <a href="/talks_and_classes.html" >Talks & Classes</a>
+        <a href="/blog_posts.html" >Blog Posts</a>
+        <a href="/Vitae.pdf" target = "_blank" >CV</a>     
+    </nav>
+  </header>
+
+  <main>
+    <aside class = "portrait" itemprop="image" style="background-image: url('/static/profile.png');"></aside>
+    <p class = "writing">Hi there! 👋 I am an Assistant Professor at the University of Washington, Foster School of Business. I specialize in combining computer science with accounting research.</p> 
+    <p class = "writing">My research interests include:</p>
+    <p>    
+        <ul>
+            <li>Machine Learning</li>
+            <li>Natural Language Processing</li>
+            <li>Social Media</li>
+            <li>ESG Disclosures</li>
+            <li>XBRL</li>
+            <li>And much more! 🚀</li>
+        </ul>
+    </p>
+
+    <p>This website covers my <a href = "/research.html">research</a>, <a href = "/code_and_data.html">code & data</a>, <a href = "/talks_and_classes.html">Talks & Classes</a>, and <a href = "/blog_posts.html">blog posts</a>.</p>
+
+    <p>Looking to connect? You can find me here:</p>
+    <p>
+        <ul>
+            <li><a href = "mailto:tdekok@uw.edu" target = "_blank">Email</a></li>
+            <li><a href = "https://www.linkedin.com/in/tiesdekok" target = "_blank">LinkedIn</a></li>
+            <li><a href = "https://github.com/tiesdekok" target = "_blank">Github</a></li>
+            <li><a href = "https://twitter.com/tiesdekok" target = "_blank">Twitter</a></li>
+
+        </ul>
+    </p>
+    
+  </main>
+
+  <footer>
+    <p>Ties de Kok - Generated using a <a href = "https://github.com/TiesdeKok/TiesdeKok.github.io" target = "_blank">Python script 🐍</a> and <a href = "https://simplecss.org/" target= "_blank">simple.css</a>.</p>
+  </footer>
+
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-90851464-1', 'auto');
+    ga('send', 'pageview');
+
+     
+    var links = document.querySelectorAll('a');
+    Array.prototype.map.call(links, function(item) {
+        if (item.host != document.location.host) {
+            item.addEventListener('click', function() {
+                var action = item.getAttribute('data-action') || 'follow';
+                ga('send', 'event', 'outbound', action, item.href);
+            });
+        }
+    });
+    </script>
+</body>
+</html>
