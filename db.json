@@ -534,6 +534,16 @@
 			]
 		},
 		{
+			"name":"Zoom Questions Manager - Chrome Extensions",
+			"description":"A Chrome extension to manage questions when teaching remotely through Zoom",
+			"links":[
+				{
+					"href":"https://github.com/TiesdeKok/zoom-question-manager",
+					"label":"GitHub"
+				}
+			]
+		},
+		{
 			"name":"JupyterLab Code Bookmarks",
 			"description":"A JupyterLab extension that adds code bookmark functionality, similar to the bookmarks VSCode extension.",
 			"links":[
