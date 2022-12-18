@@ -27,7 +27,7 @@ jobs:
       - uses: TiesdeKok/html2pdf@master #markwilson/html2pdf@v1.0
         with:
           htmlPath: 'resume.html'
-          pdfName: 'resume'
+          pdfName: 'Vitae'
       - uses: stefanzweifel/git-auto-commit-action@v4
       - name: Setup Pages
         uses: actions/configure-pages@v2
@@ -38,3 +38,12 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v1
+      - name: copy resume PDF to remote host
+        uses: appleboy/scp-action@master
+        with:
+          host: ${{ secrets.CV_LOC_HOST }}
+          username: ${{ secrets.CV_LOC_USERNAME }}
+          password: ${{ secrets.CV_LOC_PW }}
+          port: ${{ secrets.CV_LOC_PORT }}
+          source: "Vitae.pdf"
+          target: ""
