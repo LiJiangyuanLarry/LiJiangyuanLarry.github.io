@@ -1,7 +1,5 @@
-name: Generate content & deploy to pages
-
-run-name: Generating a new version of the website and CV!
-
+name: Generate website & CV
+run-name: Generate website & CV
 on: [push]
 
 concurrency:
@@ -23,11 +21,17 @@ jobs:
           python-version: 'pypy3.9'
       - run: pip install -r requirements.txt
       - run: python website_generator.py
-      - uses: TiesdeKok/html2pdf@master #markwilson/html2pdf@v1.0
+
+      ## Generate a PDF version of the HTML resume
+      - uses: TiesdeKok/html2pdf@master 
         with:
           htmlPath: 'public/resume.html'
           pdfName: 'public/Vitae.pdf'
+
+      ## Add the newly generated pages to the repository
       - uses: stefanzweifel/git-auto-commit-action@v4
+
+      ## Upload the public folder to GitHub pages
       - name: Setup Pages
         uses: actions/configure-pages@v2
       - name: Upload artifact
@@ -37,6 +41,8 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v1
+
+        ## Optional: copy your vitea PDF file to a remote host (e.g., company profile). 
       - name: copy resume PDF to remote host
         uses: appleboy/scp-action@master
         with:
