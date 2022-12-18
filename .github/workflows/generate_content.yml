@@ -24,7 +24,7 @@ jobs:
           python-version: 'pypy3.9'
       - run: pip install -r requirements.txt
       - run: python website_generator.py
-      - uses: markwilson/html2pdf@v1 #TiesdeKok/html2pdf@v10
+      - uses: markwilson/html2pdf@v1.0 #TiesdeKok/html2pdf@v1.0
         with:
           htmlPath: 'resume.html'
           pdfName: 'resume'
