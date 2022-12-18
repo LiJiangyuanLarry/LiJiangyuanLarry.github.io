@@ -1,0 +1,32 @@
+<main>
+    <section>
+        <h3>Invited Talks</h3>
+        {% for item in talks %}
+            <p style = "margin-bottom: 5px;">
+                <b>{{item.title}}</b><br>
+                <i>{{item.date}} - {{item.location}}</i><br>
+                {% if item.links|length %}<i>{% for link_item in item.links %}<a href = "{{link_item.href}}" target = "_blank">{{link_item.label}}</a> {% endfor %}</i>{% endif %}
+            </p>
+        {% endfor %}
+    </section>
+
+    <section>
+        <h3 style = "margin-top: 25px;">Classes and Workshops</h3>
+        {% for item in classes %}
+            <p style = "margin-bottom: -10px;">
+                <b>{{item.name}}</b> - {{item.level}}<br>
+                {% for school in item.schools %}
+                    <i style="margin-left: 20px;  margin-top: 5px; display: inline-block;">- {{school.schoolName}} - {{school.period}}</i><br>
+                    {% if school.notes|length %}
+                        {% for note in school.notes %}
+                            <i style="padding-left: 60px; display: inline-block; font-size:12pt;" >{{note.note}}</i><br>
+                        {% endfor %}
+                    {% endif %}
+                {% endfor %}
+
+            
+            </p>
+            
+        {% endfor %}
+    </section>
+</main>

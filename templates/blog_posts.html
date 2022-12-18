@@ -1,0 +1,13 @@
+<main>
+<section>
+    <h3>Blog Articles</h3>
+    {% for item in articles %}
+        <p style = "margin-bottom: 5px;">
+            <b>{{item.title}}</b><br>
+            {% if item.summary|length %}<blockquote style = "text-align: justify; display: inline-block; margin: 0; margin-left: 30px;">{{item.summary}}</blockquote><br>{% endif %}
+            <i style = "padding-top: 15px; display: inline-block;">{{item.date}}{% if item.links|length %}<i>{% for link_item in item.links %} - <a href = "{{link_item.href}}" target = "_blank">{{link_item.label}}</a> {% endfor %}</i>{% endif %}</i><br>
+        </p>
+        <hr style = "margin: 1rem auto;">
+    {% endfor %}
+</section>
+</main>

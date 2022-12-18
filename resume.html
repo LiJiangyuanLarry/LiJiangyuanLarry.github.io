@@ -1,0 +1,986 @@
+<!doctype html>
+<html>
+	<head>
+
+	<meta charset='utf-8'>
+	<meta name='viewport' content='width=device-width, user-scalable=no, minimal-ui'>
+
+	<title>Ties de Kok</title>
+
+	<style>
+        body {
+        background: #EEEEEE;
+        font: 13px "Times New Roman", Times, sans-serif;
+        line-height: 1.4;
+        margin: 40px 0;
+        }
+
+        a, a:visited, a:hover, a:active {
+        color: #0026ff !important;
+        }
+
+        em {
+        color: #999;
+        }
+        p {
+        line-height: 1.4;
+        }
+        ul {
+        margin-bottom: 0;
+        }
+        li {
+        margin-bottom: 2px;
+        }
+        a {
+        text-decoration: none;
+        }
+
+        #resume {
+        margin: 0 auto;
+        max-width: 600px;
+        padding: 80px 100px;
+        background: #fff;
+        border: 1px solid #ccc;
+        box-shadow: 2px 2px 4px #aaa;
+        -webkit-box-shadow: 2px 2px 4px #aaa;
+        }
+
+        /* Section seperators */ 
+
+        .hline {
+        border-top: 1px solid black !important;
+        border: 0px;
+        }
+
+        .lineBlock {
+        padding-top: 15px;
+        padding-bottom: 10px;
+        }
+
+        .lineHeader {
+        font-weight: bold;
+        margin-bottom: -5px;
+        font-size: 11pt;
+        }
+        /* Title */ 
+
+        #nameBlock {
+        text-align: center;
+        }
+
+        .name {
+        font-weight: bold;
+        }
+
+        .label {
+        font-style: italic;
+        }
+
+        /* General */
+
+        .sectionBlock {
+        padding-right: 20px;
+        }
+
+        /* Contact block */
+
+        .contactBlock {
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-gap: 10px;
+        padding: 10px;
+        
+        }
+
+        #profilesBlock {
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-gap: 0px;
+        padding-left: 10px;
+        }
+
+        /* Appointments block */ 
+
+        .appointmentsRow {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 80% 20%;
+        grid-gap: 0px;
+        padding-left: 10px;
+        padding-right: 10px;
+        }
+
+        .details {
+        margin-top: 3px;
+        }
+
+        .detailRow {
+        padding-left: 10px;
+        margin-top: -2px;
+        }
+
+        /* Papers block */
+
+        div.pubsRow:not(:last-child) {
+        margin-bottom: 10px;
+        }
+
+
+
+
+        /* Title */ 
+
+        .coursesList {
+        width: 28%;
+        vertical-align: top;
+        display: inline-block;
+        }
+
+        .largeFont {
+        font-size: 20px;
+        }
+
+        .smallFont {
+        font-size: 13px;
+        }
+
+        .sectionName {
+        width: 18%;
+        vertical-align: top;
+        display: inline-block;
+        }
+
+        .sectionContent {
+        width: 80%;
+        vertical-align: top;
+        display: inline-block;
+        }
+
+        .sectionContent ul {
+        padding-left: 20px;
+        margin-top: 6px;
+        list-style-type: circle;
+        }
+
+        .sectionContent .title {
+        font-weight: bold;
+        }
+
+        .sectionContent .date {
+        float: right;
+        }
+
+        .sectionContent .separator {
+        height: 14px;
+        }
+
+        .sectionLine {
+        border-style: dashed;
+        border-width: 1px;
+        border-color: #CFCFCF;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        }
+
+        .divider {
+        font-weight: bold;
+        margin-left: 5px;
+        margin-right: 5px;
+        }
+
+        .summary {
+        margin-top: 6px;
+        }
+
+        .skillBlock {
+        margin-bottom: 4px;
+        }
+
+        .jobBlock {
+        page-break-inside: avoid;
+        }
+
+        /* Media Queries */
+        @media only screen and (max-width: 40em) {
+        body {
+            margin: 0;
+            font-size: 14px;
+        }
+        #resume {
+            margin: 0 auto;
+            max-width: 600px;
+            padding: 0.5em 1em;
+            border: none;
+        }
+        .sectionBlock {
+            flex-direction: column;
+        }
+        .sectionContent {
+            width: 100%;
+        }
+        .sectionContent .date {
+            padding-right: 2em;
+        }
+        .sectionName {
+            width: auto;
+        }
+        .largeFont {
+            font-size: 20px;
+        }
+        .smallFont {
+            font-size: 14px;
+        }
+        }
+
+        @media print {
+        body {
+            background: #FFFFFF;
+        }
+        #resume {
+            margin: 0 auto;
+            max-width: 600px;
+            padding: 0px 0px;
+            border: 0px;
+            background: #fff;
+            box-shadow: none;
+            -webkit-box-shadow: none;
+        }
+
+        a {
+            color: black;
+        }
+        }
+
+	</style>
+
+	</head>
+    
+	<body>
+
+        <div id='resume'>
+
+        <!-- Bio details -->
+        
+        <div id='nameBlock' class='largeFont'>
+            <span class='name'>
+                Ties de Kok
+            </span>
+            <br>
+            
+                <span class='label'>Curriculum Vitae</span>
+            
+        </div>
+
+        <hr class='hline'>
+
+        <div id='basicsBlock' class='smallFont'>
+        <div class='contactBlock'>
+            <div class='colLeft'>
+            
+            <span class='currentAffiliation'>Foster School of Business, University of Washington</span> <br>
+            
+            
+            <span class='addressOffice'>PACCAR Hall, Box 353226</span><br>
+            
+            
+            <span class='addressDetails'>Seattle, WA 98195</span><br>
+            
+            </div>
+
+            <div class='colRight'>
+            
+                <span class='phone'>206 685 2252</span><br>
+            
+            
+                <span class='email'>tdekok@uw.edu</span><br>
+            
+            
+                <span class='website'><a href="https://www.tiesdekok.com">https://www.tiesdekok.com</a></span><br>
+            
+            </div>
+        </div>
+
+        
+        
+            <div id='profilesBlock'>
+            
+                
+                <div>
+                    
+                    <span style='font-weight: bold;'>GitHub:</span> 
+                    
+                    <a href="https://www.github.com/tiesdekok">https://www.github.com/tiesdekok</a> <br>
+                </div>
+                
+            
+                
+                <div>
+                    
+                    <span style='font-weight: bold;'>LinkedIn:</span> 
+                    
+                    <a href="https://www.linkedin.com/in/tiesdekok">https://www.linkedin.com/in/tiesdekok</a> <br>
+                </div>
+                
+            
+            </div>
+        
+        </div>
+
+        <div class='lineBlock'>
+            <div class='lineHeader'>Academic Appointments</div>
+            <hr class='hline'>
+        </div>
+
+        <!-- Academic Appointments -->
+
+        
+            <div id='appointmentsBlock' class="sectionBlock">
+            
+                <div class='appointmentsRow'>
+                <div class='school'>
+                    University of Washington, Foster School of Business
+                    
+                    – Assistant Professor
+                    
+                </div>
+                <div class='period' style='text-align:right;'>
+                    2019 – present
+                </div>
+                
+                </div> 
+            
+                <div class='appointmentsRow'>
+                <div class='school'>
+                    Tilburg University
+                    
+                    – PhD Researcher
+                    
+                </div>
+                <div class='period' style='text-align:right;'>
+                    2015 – 2019
+                </div>
+                
+                </div> 
+            
+                <div class='appointmentsRow'>
+                <div class='school'>
+                    Tilburg University
+                    
+                    – Research & Teaching Assistant
+                    
+                </div>
+                <div class='period' style='text-align:right;'>
+                    2014 – 2015
+                </div>
+                
+                </div> 
+            
+            </div>
+        
+
+        <!-- Education -->
+
+        <div class='lineBlock'>
+            <div class='lineHeader'>Education and Certification</div>
+            <hr class='hline'>
+        </div>
+
+        
+            <div id='educationBlock' class="sectionBlock">
+            
+                <div class='appointmentsRow'>
+                <div class='school'>
+                
+                PhD in Accounting
+                
+                
+                – Tilburg University
+                
+            </div>
+            <div class='period' style='text-align:right;'>
+                2015 – 2019
+            </div>
+            
+                <ul class='details'>
+                
+                    <li class='detailRow'> Title: 'Essays on reporting and information processing'</li>
+                
+                    <li class='detailRow'> PhD awarded May 20th 2019 with the distinction Cum Laude</li>
+                
+                    <li class='detailRow'> Tilburg University, the Netherlands</li>
+                
+                </ul>
+            
+            </div> 
+            
+                <div class='appointmentsRow'>
+                <div class='school'>
+                
+                Visiting Scholar (6 months)
+                
+                
+                – University of Washington
+                
+            </div>
+            <div class='period' style='text-align:right;'>
+                2018 – 2018
+            </div>
+            
+            </div> 
+            
+                <div class='appointmentsRow'>
+                <div class='school'>
+                
+                MSc Research Master in Accounting
+                
+                
+                – Tilburg University
+                
+            </div>
+            <div class='period' style='text-align:right;'>
+                2013 – 2015
+            </div>
+            
+            </div> 
+            
+                <div class='appointmentsRow'>
+                <div class='school'>
+                
+                BSc Business Administration (with distinction)
+                
+                
+                – Tilburg University
+                
+            </div>
+            <div class='period' style='text-align:right;'>
+                2010 – 2013
+            </div>
+            
+            </div> 
+            
+
+            </div>
+        
+
+        <!-- Research -->
+
+        <div class='lineBlock'>
+            <div class='lineHeader'>Published and Accepted Research</div>
+            <hr class='hline'>
+        </div>
+
+        
+            <div id='pubsBlock' class="sectionBlock">
+            
+                <div class='pubsRow'>
+                <span>"How Resilient are Firms' Financial Reporting Processes?" 
+                    (with Ed deHaan, Dawn Matsumoto, and Edgar Rodriguez-Vazquez).  Forthcoming at Management Science
+                    </span>
+                </div> 
+            
+                <div class='pubsRow'>
+                <span>"The Prevalence and Validity of EBITDA as a Performance Measure" 
+                    (with Arnt Verriest and Jan Bouwens).  Accounting Auditing Control, 2019
+                    </span>
+                </div> 
+            
+            </div>
+        
+        
+        <div class='lineBlock'>
+            <div class='lineHeader'>Working Papers</div>
+            <hr class='hline'>
+        </div>
+
+        
+            <div id='workingBlock' class="sectionBlock">
+            
+                <div class='pubsRow'>
+                    <span>
+                        "Confused Readers: A Modular Approach for Measuring Business Complexity" 
+                        (with Beth Blankespoor, Darren Bernard, and Sara Toynbee). 
+                    </span>     
+                </div> 
+            
+                <div class='pubsRow'>
+                    <span>
+                        "Corporate Engagement in Public Discourse " 
+                        (with Beth Blankespoor and Xue Li). 
+                    </span>     
+                </div> 
+            
+                <div class='pubsRow'>
+                    <span>
+                        "Update Frequency and Funder Involvement in Reward Crowdfunding Markets" 
+                        (Solo-authored). 
+                    </span>     
+                </div> 
+            
+                <div class='pubsRow'>
+                    <span>
+                        "Can Centralization Improve the Use of Soft Information? Evidence from a Field Study and Lab Experiment" 
+                        (with Jan Bouwens). 
+                    </span>     
+                </div> 
+            
+                <div class='pubsRow'>
+                    <span>
+                        "Measuring and predicting investor disagreement from narrative disclosures using AI" 
+                        (with Victor van Pelt and Christoph Sextroh). 
+                    </span>     
+                </div> 
+            
+            </div>
+        
+
+        <!-- Teaching -->
+
+        <div class='lineBlock'>
+            <div class='lineHeader'>Teaching</div>
+            <hr class='hline'>
+        </div>
+
+        
+            <div id='teachingBlock' class="sectionBlock">
+            
+                <div class='teachingRow' style="padding-bottom:5px;">
+                <span style='padding-bottom:5px; display:block;'><b>Accounting Systems & Analytics </b>- Undergraduate</span> 
+                
+                    <ul class='details'>
+                    
+                        <li class='detailRow'> <span style='text-align:left;'>University of Washington </span>
+                        <span class='period' style='float: right;'>
+                            2021 - present
+                        </span>
+                        </li>
+                        
+                        <div style="margin-bottom: 5px;">
+                        
+                            <div style="margin-left: 10px; margin-right:150px;">- ACCTG 320 - Case-based class on developing the analytical mindset and analytical skillset for accounting and business professionals.</div>
+                        
+                        </div>
+                        
+                    
+                    </ul>
+                
+                </div> 
+            
+                <div class='teachingRow' style="padding-bottom:5px;">
+                <span style='padding-bottom:5px; display:block;'><b>Python Programming </b>- PhD, Faculty</span> 
+                
+                    <ul class='details'>
+                    
+                        <li class='detailRow'> <span style='text-align:left;'>University of Washington </span>
+                        <span class='period' style='float: right;'>
+                            2018, 2020 - present (annual)
+                        </span>
+                        </li>
+                        
+                        <div style="margin-bottom: 5px;">
+                        
+                            <div style="margin-left: 10px; margin-right:150px;">- Github page: <a href='https://github.com/TiesdeKok/acctg-579B' target='_blank'>https://github.com/TiesdeKok/acctg-579B</a></div>
+                        
+                        </div>
+                        
+                    
+                        <li class='detailRow'> <span style='text-align:left;'>Limperg Institute </span>
+                        <span class='period' style='float: right;'>
+                            2019 - present (annual)
+                        </span>
+                        </li>
+                        
+                        <div style="margin-bottom: 5px;">
+                        
+                            <div style="margin-left: 10px; margin-right:150px;">- Github page: <a href='https://github.com/TiesdeKok/limperg_python' target='_blank'>https://github.com/TiesdeKok/limperg_python</a></div>
+                        
+                        </div>
+                        
+                    
+                        <li class='detailRow'> <span style='text-align:left;'>Tilburg University </span>
+                        <span class='period' style='float: right;'>
+                            2016, 2017
+                        </span>
+                        </li>
+                        
+                    
+                        <li class='detailRow'> <span style='text-align:left;'>University of Bristol </span>
+                        <span class='period' style='float: right;'>
+                            2018
+                        </span>
+                        </li>
+                        
+                    
+                    </ul>
+                
+                </div> 
+            
+                <div class='teachingRow' style="padding-bottom:5px;">
+                <span style='padding-bottom:5px; display:block;'><b>Introductory Financial Accounting and Management Accounting </b>- Undergraduate</span> 
+                
+                    <ul class='details'>
+                    
+                        <li class='detailRow'> <span style='text-align:left;'>University of Washington </span>
+                        <span class='period' style='float: right;'>
+                            2020 - 2021
+                        </span>
+                        </li>
+                        
+                        <div style="margin-bottom: 5px;">
+                        
+                            <div style="margin-left: 10px; margin-right:150px;">- ACCTG 219 - Essentials of Accounting (FA & MA) for non-business school students.</div>
+                        
+                        </div>
+                        
+                    
+                        <li class='detailRow'> <span style='text-align:left;'>Tilburg University </span>
+                        <span class='period' style='float: right;'>
+                            2015 - 2017
+                        </span>
+                        </li>
+                        
+                        <div style="margin-bottom: 5px;">
+                        
+                            <div style="margin-left: 10px; margin-right:150px;">- Accounting 1 - Financial Accounting.</div>
+                        
+                        </div>
+                        
+                    
+                    </ul>
+                
+                </div> 
+            
+                <div class='teachingRow' style="padding-bottom:5px;">
+                <span style='padding-bottom:5px; display:block;'><b>Financial Accounting Theory: Stata tutorials </b>- Master</span> 
+                
+                    <ul class='details'>
+                    
+                        <li class='detailRow'> <span style='text-align:left;'>Tilburg University </span>
+                        <span class='period' style='float: right;'>
+                            2016 - 2017
+                        </span>
+                        </li>
+                        
+                    
+                    </ul>
+                
+                </div> 
+            
+            </div>
+        
+
+        <!-- Service -->
+
+        <div class='lineBlock'>
+            <div class='lineHeader'>Invited Presentations</div>
+            <hr class='hline'>
+        </div>
+
+        <div id='presentationBlock' class="sectionBlock">
+            
+                <div class='presentionRow' style="padding-bottom:5px; display:flex;">
+                <span style = "float: left; flex: 8%;">2021</span> <span style = "float: left; flex: 92%;">Ludwig-Maximilians-Universität München; Vrije Universiteit Amsterdam; Stanford University </span>
+                </div> 
+            
+                <div class='presentionRow' style="padding-bottom:5px; display:flex;">
+                <span style = "float: left; flex: 8%;">2020</span> <span style = "float: left; flex: 92%;">FARS mid-year meeting </span>
+                </div> 
+            
+                <div class='presentionRow' style="padding-bottom:5px; display:flex;">
+                <span style = "float: left; flex: 8%;">2019</span> <span style = "float: left; flex: 92%;">University of Notre Dame; UT Dallas; University of Iowa; University of Utah; Northwestern / Kellogg; Erasmus University Rotterdam; Boston College; Yale University; Harvard Business School; University of British Columbia; University of Washington; Amsterdam Business School </span>
+                </div> 
+            
+                <div class='presentionRow' style="padding-bottom:5px; display:flex;">
+                <span style = "float: left; flex: 8%;">2018</span> <span style = "float: left; flex: 92%;">Baruch College; Miami Rookie Camp; EAA Madrid Talent Workshop; University of Lancaster; University of Washington; University of Bristol; EAA Doctoral Colloquium, Milan </span>
+                </div> 
+            
+                <div class='presentionRow' style="padding-bottom:5px; display:flex;">
+                <span style = "float: left; flex: 8%;">2017</span> <span style = "float: left; flex: 92%;">GMARS, Sydney; EAA Annual Congress, Valencia </span>
+                </div> 
+            
+                <div class='presentionRow' style="padding-bottom:5px; display:flex;">
+                <span style = "float: left; flex: 8%;">2016</span> <span style = "float: left; flex: 92%;">AAA Annual Meeting, New York </span>
+                </div> 
+            
+        </div>
+                
+        <div class='lineBlock'>
+            <div class='lineHeader'>Invited Talks</div>
+            <hr class='hline'>
+        </div>
+
+        <div id='talkBlock' class="sectionBlock">
+            
+            <div class='talkRow' style="padding-bottom:5px; display: flex;">
+                <span style = "float: left; flex: 8%;">2022</span> <span style = "float: left; flex: 92%;">A Primer on Textual Analysis<br><i>AAA Management Accounting Section - 2022 - Doctoral Consortium</i></span>
+            </div> 
+            
+            <div class='talkRow' style="padding-bottom:5px; display: flex;">
+                <span style = "float: left; flex: 8%;">2021</span> <span style = "float: left; flex: 92%;">Measuring and predicting investor disagreement from narrative disclosures using AI<br><i>Rotman CPA Ontario Centre for Accounting Innovation Research Conference</i></span>
+            </div> 
+            
+            <div class='talkRow' style="padding-bottom:5px; display: flex;">
+                <span style = "float: left; flex: 8%;">2018</span> <span style = "float: left; flex: 92%;">PhD Forum Break-out: NLP with Python for Accounting Research<br><i>European Accounting Association Annual Congress</i></span>
+            </div> 
+            
+            <div class='talkRow' style="padding-bottom:5px; display: flex;">
+                <span style = "float: left; flex: 8%;">2017</span> <span style = "float: left; flex: 92%;">Plenary Session PhD Forum: Accounting Research Center<br><i>European Accounting Association Annual Congress</i></span>
+            </div> 
+            
+            <div class='talkRow' style="padding-bottom:5px; display: flex;">
+                <span style = "float: left; flex: 8%;">2016</span> <span style = "float: left; flex: 92%;">Combine Stata with Python using the Jupyter Notebook<br><i>Stata Conference, University of Chicago Booth School of Business</i></span>
+            </div> 
+            
+            <div class='talkRow' style="padding-bottom:5px; display: flex;">
+                <span style = "float: left; flex: 8%;">2016</span> <span style = "float: left; flex: 92%;">Plenary Session PhD Forum: Ethics, Transparency, and Replicability<br><i>European Accounting Association Annual Congress</i></span>
+            </div> 
+            
+        </div>
+
+        <div class='lineBlock'>
+            <div class='lineHeader'>External Service</div>
+            <hr class='hline'>
+        </div>
+
+        <div style="margin-bottom:-5px;">Ad Hoc Referee</div>
+
+        <ul style="margin-bottom: 10px;">
+            
+                <li>Journal of Accounting and Economics</li>
+            
+                <li>Journal of Accounting Research</li>
+            
+                <li>The Accounting Review</li>
+            
+                <li>Contemporary Accounting Research</li>
+            
+                <li>Journal of Business Finance & Accounting</li>
+            
+                <li>European Accounting Review</li>
+            
+                <li>Schmalenbach Journal of Business Research</li>
+            
+                <li>Asia-Pacific Journal of Accounting and Economics</li>
+            
+        </ul>
+
+        <div style="margin-bottom:-5px;">Conference Referee</div>
+
+        <ul style="margin-bottom: 0px;">
+            
+                <li>Hawaii Accounting Research Conference</li>
+            
+                <li>AAA - FARS Conference</li>
+            
+                <li>EAA Annual Meeting</li>
+            
+                <li>AAA Annual Meeting</li>
+            
+                <li>AFAANZ Annual Conference</li>
+            
+        </ul>
+
+        <!-- Awards -->
+
+        <div class='lineBlock'>
+            <div class='lineHeader'>Awards</div>
+            <hr class='hline'>
+        </div>
+
+        <div id='awardBlock' class="sectionBlock">
+            
+                <div class='talkRow' style="padding-bottom:5px; display: flex;">
+                    <span style = "float: left; flex: 8%;">2021</span> <span style = "float: left; flex: 92%;">Teaching Award for Doctoral Studies- the University of Münster</span>
+                </div> 
+            
+                <div class='talkRow' style="padding-bottom:5px; display: flex;">
+                    <span style = "float: left; flex: 8%;">2019</span> <span style = "float: left; flex: 92%;">FARS Excellence in Reviewing Award</span>
+                </div> 
+            
+                <div class='talkRow' style="padding-bottom:5px; display: flex;">
+                    <span style = "float: left; flex: 8%;">2019</span> <span style = "float: left; flex: 92%;">Runner-up best PhD dissertation at TiSEM (Tilburg University, university-wide)</span>
+                </div> 
+            
+                <div class='talkRow' style="padding-bottom:5px; display: flex;">
+                    <span style = "float: left; flex: 8%;">2019</span> <span style = "float: left; flex: 92%;">NVIDIA GPU Grand “Accelerate Data Science”</span>
+                </div> 
+            
+                <div class='talkRow' style="padding-bottom:5px; display: flex;">
+                    <span style = "float: left; flex: 8%;">2018</span> <span style = "float: left; flex: 92%;">Limperg Scholarship:6-month visit to the University of Washington</span>
+                </div> 
+            
+                <div class='talkRow' style="padding-bottom:5px; display: flex;">
+                    <span style = "float: left; flex: 8%;">2017</span> <span style = "float: left; flex: 92%;">NVIDIA GPU Grand for deep-learning research</span>
+                </div> 
+            
+                <div class='talkRow' style="padding-bottom:5px; display: flex;">
+                    <span style = "float: left; flex: 8%;">2016</span> <span style = "float: left; flex: 92%;">Ph.D. student travel grant - AAA annual meeting</span>
+                </div> 
+            
+        </div>
+
+        <div class='lineBlock'>
+            <div class='lineHeader'>Open Source Projects</div>
+            <hr class='hline'>
+        </div>
+
+        <div id='OSprojectsBlock' class="sectionBlock">
+            
+                <div class='projectRow' style="padding-bottom:5px;">
+                    <span style='padding-bottom:5px;'><i>IPyStata</i></span>
+                    <span style="margin-left:15px; display:block;">Python package to combine Python and Stata in a jupyter notebook. <br> Officially integrated into Stata as of Stata 17.</span>
+                    
+                        <span style="margin-left:15px; display:block; margin-bottom: 10px;"><a href=https://github.com/TiesdeKok/ipystata>https://github.com/TiesdeKok/ipystata</a></span>
+                    
+                </div> 
+            
+                <div class='projectRow' style="padding-bottom:5px;">
+                    <span style='padding-bottom:5px;'><i>SUMHDFE</i></span>
+                    <span style="margin-left:15px; display:block;">Stata package to provide Fixed Effects Diagnostics.</span>
+                    
+                        <span style="margin-left:15px; display:block; margin-bottom: 10px;"><a href=https://github.com/ed-dehaan/sumhdfe>https://github.com/ed-dehaan/sumhdfe</a></span>
+                    
+                </div> 
+            
+                <div class='projectRow' style="padding-bottom:5px;">
+                    <span style='padding-bottom:5px;'><i>Fast XBRL Parser</i></span>
+                    <span style="margin-left:15px; display:block;">Fast, easy, and lightweight XBRL to JSON or CSV parser written in Rust.</span>
+                    
+                        <span style="margin-left:15px; display:block; margin-bottom: 10px;"><a href=https://github.com/TiesdeKok/fast_xbrl_parser>https://github.com/TiesdeKok/fast_xbrl_parser</a></span>
+                    
+                </div> 
+            
+                <div class='projectRow' style="padding-bottom:5px;">
+                    <span style='padding-bottom:5px;'><i>Learn Python for Research</i></span>
+                    <span style="margin-left:15px; display:block;">Github repository with everything you need to get started with Python for (social science) research.</span>
+                    
+                        <span style="margin-left:15px; display:block; margin-bottom: 10px;"><a href=https://github.com/TiesdeKok/LearnPythonforResearch>https://github.com/TiesdeKok/LearnPythonforResearch</a></span>
+                    
+                </div> 
+            
+                <div class='projectRow' style="padding-bottom:5px;">
+                    <span style='padding-bottom:5px;'><i>Python NLP Tutorial</i></span>
+                    <span style="margin-left:15px; display:block;">Github repository with everything you need to get started with Python for text mining / NLP.</span>
+                    
+                        <span style="margin-left:15px; display:block; margin-bottom: 10px;"><a href=https://github.com/TiesdeKok/Python_NLP_Tutorial>https://github.com/TiesdeKok/Python_NLP_Tutorial</a></span>
+                    
+                </div> 
+            
+                <div class='projectRow' style="padding-bottom:5px;">
+                    <span style='padding-bottom:5px;'><i>JupyterLab Code Bookmarks</i></span>
+                    <span style="margin-left:15px; display:block;">A JupyterLab extension that adds code bookmark functionality, similar to the bookmarks VSCode extension.</span>
+                    
+                        <span style="margin-left:15px; display:block; margin-bottom: 10px;"><a href=https://github.com/TiesdeKok/jupyterlab_code_bookmarks>https://github.com/TiesdeKok/jupyterlab_code_bookmarks</a></span>
+                    
+                </div> 
+            
+                <div class='projectRow' style="padding-bottom:5px;">
+                    <span style='padding-bottom:5px;'><i>Folder Structure Generator</i></span>
+                    <span style="margin-left:15px; display:block;">Web app to automatically generate a folder structure for new research projects.</span>
+                    
+                        <span style="margin-left:15px; display:block; margin-bottom: 10px;"><a href=https://www.tiesdekok.com/folder-structure-generator/>https://www.tiesdekok.com/folder-structure-generator/</a></span>
+                    
+                </div> 
+            
+        </div>
+
+        <!-- Footer -->
+
+        <div class='lineBlock'>
+            <div class='lineHeader'>Miscellaneous</div>
+            <hr class='hline'>
+          </div>  
+
+        
+
+        <div id='skills' class="sectionBlock">
+            <div class='sectionName'>
+                <span>SKILLS</span>
+            </div>
+            <div class='sectionContent'>
+                
+                    <div class='skillBlock'>
+                        <span class='title'>Programming:</span>
+                        
+                        
+                            
+                            <span>Python, </span>
+                            
+                            <span>Javascript/TypeScript, </span>
+                            
+                            <span>Rust</span>
+                            
+                        
+                    </div>
+                
+                    <div class='skillBlock'>
+                        <span class='title'>Tools:</span>
+                        
+                        
+                            
+                            <span>R, </span>
+                            
+                            <span>Stata, </span>
+                            
+                            <span>Alteryx, </span>
+                            
+                            <span>Tableau</span>
+                            
+                        
+                    </div>
+                
+                    <div class='skillBlock'>
+                        <span class='title'>Misc.:</span>
+                        
+                        
+                            
+                            <span>SQL, </span>
+                            
+                            <span>LaTeX, </span>
+                            
+                            <span>DevOps, </span>
+                            
+                            <span>CUDA, </span>
+                            
+                            <span>ML Engineering</span>
+                            
+                        
+                    </div>
+                
+            </div>
+        </div>
+
+        <hr class='hline'>
+
+        
+
+        
+
+        <div id='languages' class="sectionBlock">
+            <div class='sectionName'>
+                <span>LANGUAGES</span>
+            </div>
+            <div class='sectionContent'>
+                
+                <span class='language'>Dutch</span>
+                
+                <span class='fluency'><em>(Native speaker)</em></span>
+                
+                <span>,</span>
+                
+                <span class='language'>English</span>
+                
+                <span class='fluency'><em>(Bilingual)</em></span>
+                
+                
+                
+            </div>
+            <hr class='hline'>
+        </div>
+        
+
+        
+
+        <span style="text-align:center; display:block; margin-top:20px; font-size:14px;" id="updateDate"><b>Last updated: </b>December 17, 2022</span>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,40 @@
+name: Generate content & deploy to pages
+
+run-name: Generating a new version of the website and CV!
+
+on: [push]
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+jobs:
+  generate-content:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+        with:
+          python-version: 'pypy3.9'
+      - run: pip install -r requirements.txt
+      - run: python website_generator.py
+      - uses: markwilson/html2pdf@v1 #TiesdeKok/html2pdf@v10
+        with:
+          htmlPath: 'resume.html'
+          pdfName: 'resume'
+      - uses: stefanzweifel/git-auto-commit-action@v4
+      - name: Setup Pages
+        uses: actions/configure-pages@v2
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v1
+        with:
+          path: '.'
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v1

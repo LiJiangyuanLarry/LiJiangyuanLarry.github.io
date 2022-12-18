@@ -1,0 +1,17 @@
+<main>
+    <section>
+        <h3>Open Source Projects</h3>
+        {% for item in projects %}
+            <p style = "margin-bottom: 5px;">
+                <b>{{item.name}}</b><br>
+                <i>{{item.description}}</i><br>
+
+                <i>{% for link_item in item.links %}<a href = "{{link_item.href}}" target = "_blank">{{link_item.label}}</a> {% endfor %}</i>
+            </p>
+            
+        {% endfor %}
+
+    <kbd >For all my projects, check my <a href = "https://github.com/TiesdeKok/" target = "_blank">GitHub page</a></kbd>
+
+    </section>
+</main>

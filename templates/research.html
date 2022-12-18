@@ -1,0 +1,35 @@
+<main>
+    <section>
+        <h3>Publications</h3>
+        {% for paper in publications %}
+            <p style = "margin-bottom: 5px;">
+                <b>{{paper.title}}</b><br>
+                <i>{{paper.journal}}{% if paper.year|length %} - {{paper.year}}{% endif %}{% for link_item in paper.links %} (<a href = "{{link_item.href}}" target = "_blank">{{link_item.label}}</a>){% endfor %}</i><br>
+                <i>{{paper.coauthors}}</i>
+            </p>
+            {% if paper.abstract|length %}
+            <details>
+                <summary>Abstract</summary>
+                <p style="text-align: justify;">{{paper.abstract}}</p>
+            </details>
+            {% endif %}
+            
+        {% endfor %}
+    </section>
+
+    <section>
+        <h3 style = "margin-top: 25px;">Working projects</h3>
+        {% for paper in working_projects %}
+        <p style = "margin-bottom: 5px;">
+            <b>{{paper.title}}</b><br>
+            <i>{{paper.coauthors}}{% for link_item in paper.links %} (<a href = "{{link_item.href}}" target = "_blank">{{link_item.label}}</a>){% endfor %}</i><br>
+        </p>
+        {% if paper.abstract|length %}
+        <details>
+            <summary>Abstract</summary>
+            <p style="text-align: justify;">{{paper.abstract}}</p>
+        </details>
+        {% endif %}
+    {% endfor %}
+    </section>
+</main>
