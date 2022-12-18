@@ -45,5 +45,5 @@ jobs:
           username: ${{ secrets.CV_LOC_USERNAME }}
           password: ${{ secrets.CV_LOC_PW }}
           port: ${{ secrets.CV_LOC_PORT }}
-          source: "Vitae.pdf"
-          target: ""
+          source: "./Vitae.pdf"
+          target: "./"
