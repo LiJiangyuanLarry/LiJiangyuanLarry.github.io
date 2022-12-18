@@ -1,6 +1,6 @@
 # My simple website & CV generator
 
-This is my spin on simple website & CV generator based on the following needs:
+This is my spin on a simple website & CV generator based on the following needs:
 
 - Generate a website and a CV based on a single JSON file.
 - Keep things as simple as possible. The only external dependency is Jinja2. The rest is pure Python and HTML/CSS.
