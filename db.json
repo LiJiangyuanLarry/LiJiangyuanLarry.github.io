@@ -493,6 +493,16 @@
 				}
 			]
 		},
+				{
+			"name":"ChatGPT for Jupyter - Chrome Extension",
+			"description":"A browser extension to provide various AI helper functions in Jupyter Notebooks, powered by ChatGPT.",
+			"links":[
+				{
+					"href":"https://github.com/TiesdeKok/chat-gpt-jupyter-extension",
+					"label":"GitHub"
+				}
+			]
+		},
 		{
 			"name":"SUMHDFE",
 			"description":"Stata package to provide Fixed Effects Diagnostics.",
