@@ -88,10 +88,14 @@
 	"publishedPapers":[
 		{
 			"coauthors":"with Ed deHaan, Dawn Matsumoto, and Edgar Rodriguez-Vazquez",
-			"year":"",
+			"year":"2023",
 			"title":"How Resilient are Firms' Financial Reporting Processes?",
-			"journal":"Forthcoming at Management Science",
+			"journal":"Management Science",
 			"links":[
+				{
+					"href":"https://pubsonline.informs.org/doi/abs/10.1287/mnsc.2023.4670",
+					"label":"paper"
+				},
 				{
 					"href":"https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4239246",
 					"label":"ssrn"
