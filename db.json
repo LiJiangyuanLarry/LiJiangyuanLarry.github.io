@@ -99,6 +99,10 @@
 				{
 					"href":"https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4239246",
 					"label":"ssrn"
+				},
+				{
+					"href" : "https://github.com/TiesdeKok/mnsc.2023.4670",
+					"label" : "code"
 				}
 			],
 			"abstract":"The timely flow of financial information is critical for efficient capital market functioning, yet we have little understanding of firms' and auditors' collective abilities to maintain timely financial reporting while under duress. We use COVID as a stress test case to examine whether reporting systems can withstand systemic increases in complex economic events and coordination challenges. Despite COVID-related challenges persisting through 2020 and beyond, we document surprisingly modest average delays in financial reports during COVID, and only in Q1-2020. Reporting timeliness reverts to pre-COVID levels no later than Q2-2020. We find no evidence of meaningful declines in actual reporting quality during COVID, but we do find some evidence consistent with declines in perceived reporting quality. Overall, our findings indicate that current financial reporting processes are remarkably robust, and provide insights about financial reporting more broadly. In particular, given that nearly all firms were able to weather the unprecedented disruptions caused by COVID, our findings imply that most material reporting delays observed outside of COVID are likely due to either a firm's strategic choices or to exceptionally fragile reporting processes."
