@@ -132,7 +132,7 @@
 			"abstract" : "Generative Large Language Models (GLLMs), such as the ChatGPT and GPT-4 models by OpenAI, are emerging as powerful tools for natural language processing tasks, offering significant potential for academic research in textual analysis. This paper provides a comprehensive guide for researchers to effectively utilize GLLMs in their work, addressing key considerations such as model selection, prompt engineering, construct validity, and replicability. I discuss the advantages and limitations of GLLMs compared to alternative methods, such as human research assistants and non-generative machine learning models. Furthermore, I highlight the importance of addressing data privacy, biases, and attributability concerns when employing GLLMs. Finally, I explore current developments in the field and provide practical guidance and code examples in the appendices. By providing a framework and critical discussion, this paper aims to equip researchers with the necessary knowledge and tools to harness the potential of GLLMs effectively and accurately for their textual analysis projects.",
 			"extra":"",
 			"status":""
-		}
+		},
 		{
 			"coauthors":"with Beth Blankespoor, Darren Bernard, and Sara Toynbee",
 			"title":"Confused Readers: A Modular Approach for Measuring Business Complexity",
@@ -378,6 +378,18 @@
 		}
 	],
 	"talks":[
+		{
+			"date":"2023",
+			"title":"Workshop on modern NLP techniques in Accounting",
+			"location":"European Accounting Association - Virtual",
+            "links" : []
+		},
+		{
+			"date":"2023",
+			"title":"Going beyond ChatGPT: an introduction to prompt engineering and LLMs (90 minute tutorial)",
+			"location":"PyData Seattle 2023 - Microsoft Campus",
+            "links" : []
+		},
 		{
 			"date":"2022",
 			"title":"A Primer on Textual Analysis",
