@@ -130,6 +130,16 @@
 			"coauthors" : "Solo-authored",
 			"title": "Generative LLMs and Textual Analysis in Accounting: (Chat)GPT as Research Assistant?",
 			"abstract" : "Generative Large Language Models (GLLMs), such as the ChatGPT and GPT-4 models by OpenAI, are emerging as powerful tools for textual analysis tasks in accounting research. GLLMs can solve any textual analysis task solvable using non-generative methods, as well as tasks previously only solvable using human coding. This paper highlights the applications of GLLMs for accounting research and compares it to existing textual analysis methods. I also provide a framework for researchers to effectively utilize GLLMs in their work, addressing key considerations such as model selection, prompt engineering, and construct validity. Furthermore, I highlight the importance of addressing bias, replicability, data privacy, and attributability concerns when employing GLLMs. Finally, I explore current GLLM developments and provide practical guidance and code examples in the appendices. Taken together, this paper equips researchers with the necessary knowledge and tools to harness the potential of GLLMs and editors and reviewers with the knowledge to better evaluate papers who use the GLLM approach.",
+			"links":[
+				{
+					"href":"https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4429658",
+					"label":"ssrn"
+				},
+				{
+					"href":"https://github.com/TiesdeKok/gllm_companion",
+					"label":"code"
+				}
+			],
 			"extra":"",
 			"status":""
 		},
