@@ -5,7 +5,7 @@
 	<meta charset='utf-8'>
 	<meta name='viewport' content='width=device-width, user-scalable=no, minimal-ui'>
 
-	<title>{{ resume.basics.name }}</title>
+	<title>Jiangyuan LI</title>
 
 	<style>
         body {
@@ -263,12 +263,12 @@
         
         <div id='nameBlock' class='largeFont'>
             <span class='name'>
-                {{ resume.basics.name }}
+                Jiangyuan LI
             </span>
             <br>
-            {% if resume.basics.label %}
-                <span class='label'>{{ resume.basics.label }}</span>
-            {% endif %}
+            
+                <span class='label'>Curriculum Vitae</span>
+            
         </div>
 
         <hr class='hline'>
@@ -276,45 +276,45 @@
         <div id='basicsBlock' class='smallFont'>
         <div class='contactBlock'>
             <div class='colLeft'>
-            {% if resume.basics.currentAffiliation %}
-            <span class='currentAffiliation'>{{ resume.basics.currentAffiliation }}</span> <br>
-            {% endif %}
-            {% if resume.basics.addressOffice %}
-            <span class='addressOffice'>{{ resume.basics.addressOffice }}</span><br>
-            {% endif %}
-            {% if resume.basics.addressDetails %}
-            <span class='addressDetails'>{{ resume.basics.addressDetails }}</span><br>
-            {% endif %}
+            
+            <span class='currentAffiliation'>School of Finance, Shanghai University of Finance and Economics</span> <br>
+            
+            
+            <span class='addressOffice'>No. 100 Wudong Road, Shanghai</span><br>
+            
+            
+            <span class='addressDetails'>Yangpu District, Shanghai 200433</span><br>
+            
             </div>
 
             <div class='colRight'>
-            {% if resume.basics.phone %}
-                <span class='phone'>{{ resume.basics.phone }}</span><br>
-            {% endif %}
-            {% if resume.basics.email %}
-                <span class='email'>{{ resume.basics.email }}</span><br>
-            {% endif %}
-            {% if resume.basics.website %}
-                <span class='website'><a href="{{ resume.basics.website }}">{{ resume.basics.website }}</a></span><br>
-            {% endif %}
+            
+                <span class='phone'>0086 13636319613</span><br>
+            
+            
+                <span class='email'>lijiangyuan@mail.shufe.edu.cn</span><br>
+            
+            
+                <span class='website'><a href="https://www.jiangyuanli.com">https://www.jiangyuanli.com</a></span><br>
+            
             </div>
         </div>
 
         
-        {% if resume.basics.profiles|length %}
+        
             <div id='profilesBlock'>
-            {% for profile in resume.basics.profiles %}
-                {% if profile.url %}
+            
+                
                 <div>
-                    {% if profile.label %}
-                    <span style='font-weight: bold;'>{{ profile.label }}:</span> 
-                    {% endif %}
-                    <a href="{{ profile.url }}">{{ profile.url }}</a> <br>
+                    
+                    <span style='font-weight: bold;'>LinkedIn:</span> 
+                    
+                    <a href="https://www.linkedin.com/in/jiangyuanli">https://www.linkedin.com/in/jiangyuanli</a> <br>
                 </div>
-                {% endif %}
-            {% endfor %}
+                
+            
             </div>
-        {% endif %}
+        
         </div>
 
         <div class='lineBlock'>
@@ -324,30 +324,37 @@
 
         <!-- Academic Appointments -->
 
-        {% if resume.appointments|length %}
+        
             <div id='appointmentsBlock' class="sectionBlock">
-            {% for appointment in resume.appointments %}
+            
                 <div class='appointmentsRow'>
                 <div class='school'>
-                    {{ appointment.school }}
-                    {% if appointment.position %}
-                    – {{ appointment.position }}
-                    {% endif %}
+                    School of Finance, Shanghai University of Finance and Economics
+                    
+                    – Associate Professor
+                    
                 </div>
                 <div class='period' style='text-align:right;'>
-                    {{ appointment.startDate }} – {{ appointment.endDate }}
+                    2022 – present
                 </div>
-                {% if appointment.details|length %}
-                    <ul class='details'>
-                    {% for detail in appointment.details %}
-                        <li class='detailRow'> {{ detail.text }}</li>
-                    {% endfor %}
-                    </ul>
-                {% endif %}
+                
                 </div> 
-            {% endfor %}
+            
+                <div class='appointmentsRow'>
+                <div class='school'>
+                    School of Finance, Shanghai University of Finance and Economics
+                    
+                    – Assistant Professor
+                    
+                </div>
+                <div class='period' style='text-align:right;'>
+                    2020 – 2022
+                </div>
+                
+                </div> 
+            
             </div>
-        {% endif %}
+        
 
         <!-- Education -->
 
@@ -356,33 +363,42 @@
             <hr class='hline'>
         </div>
 
-        {% if resume.education|length %}
+        
             <div id='educationBlock' class="sectionBlock">
-            {% for education in resume.education %}
+            
                 <div class='appointmentsRow'>
                 <div class='school'>
-                {% if education.degree %}
-                {{ education.degree }}
-                {% endif %}
-                {% if education.school %}
-                – {{ education.school }}
-                {% endif %}
+                
+                PhD in Finance
+                
+                
+                – Singapore Management University
+                
             </div>
             <div class='period' style='text-align:right;'>
-                {{ education.startDate }} – {{ education.endDate }}
+                2015 – 2020
             </div>
-            {% if education.details|length %}
-                <ul class='details'>
-                {% for detail in education.details %}
-                    <li class='detailRow'> {{ detail.text }}</li>
-                {% endfor %}
-                </ul>
-            {% endif %}
+            
             </div> 
-            {% endfor %}
+            
+                <div class='appointmentsRow'>
+                <div class='school'>
+                
+                Undergraduate
+                
+                
+                – Shanghai University of Finance and Economics
+                
+            </div>
+            <div class='period' style='text-align:right;'>
+                2009 – 2013
+            </div>
+            
+            </div> 
+            
 
             </div>
-        {% endif %}
+        
 
         <!-- Research -->
 
@@ -391,35 +407,41 @@
             <hr class='hline'>
         </div>
 
-        {% if resume.publishedPapers|length %}
+        
             <div id='pubsBlock' class="sectionBlock">
-            {% for paper in resume.publishedPapers %}
+            
                 <div class='pubsRow'>
-                <span>"{{paper.title}}" 
-                    {% if paper.coauthors %}({{paper.coauthors}}). {% endif %} {{paper.journal}}{% if paper.year %}, {% endif %}{{paper.year}}
+                <span>"Are disagreements agreeable? Evidence from Information Aggregation" 
+                    (with Dashan Huang, Liyao Wang).  Journal of Financial Economics, 2021
                     </span>
                 </div> 
-            {% endfor %}
+            
+                <div class='pubsRow'>
+                <span>"Time series momentum: Is it there?" 
+                    (with Dashan Huang, Liyao Wang, Guofu Zhou).  Journal of Financial Economics, 2020
+                    </span>
+                </div> 
+            
             </div>
-        {% endif %}
+        
         
         <div class='lineBlock'>
             <div class='lineHeader'>Working Papers</div>
             <hr class='hline'>
         </div>
 
-        {% if resume.workingPapers|length %}
+        
             <div id='workingBlock' class="sectionBlock">
-            {% for paper in resume.workingPapers %}
+            
                 <div class='pubsRow'>
                     <span>
-                        "{{ paper.title }}" 
-                        {% if paper.coauthors %}({{ paper.coauthors }}). {% endif %}{{ paper.extra }}
+                        "Duration-dirven Carbon Premium" 
+                        (with Yongqi He, Ruishen Zhang). 
                     </span>     
                 </div> 
-            {% endfor %}
+            
             </div>
-        {% endif %}
+        
 
         <!-- Teaching -->
 
@@ -428,33 +450,43 @@
             <hr class='hline'>
         </div>
 
-        {% if resume.teaching|length %}
+        
             <div id='teachingBlock' class="sectionBlock">
-            {% for teaching in resume.teaching %}
+            
                 <div class='teachingRow' style="padding-bottom:5px;">
-                <span style='padding-bottom:5px; display:block;'><b>{{ teaching.name }} </b>- {{ teaching.level }}</span> 
-                {% if teaching.schools|length %}
+                <span style='padding-bottom:5px; display:block;'><b>Investment </b>- Undergraduate</span> 
+                
                     <ul class='details'>
-                    {% for school in teaching.schools %}
-                        <li class='detailRow'> <span style='text-align:left;'>{{ school.schoolName }} </span>
+                    
+                        <li class='detailRow'> <span style='text-align:left;'>Shanghai University of Finance and Economics </span>
                         <span class='period' style='float: right;'>
-                            {{ school.period }}
+                            2021 - present
                         </span>
                         </li>
-                        {% if school.notes|length %}
-                        <div style="margin-bottom: 5px;">
-                        {% for note in school.notes %}
-                            <div style="margin-left: 10px; margin-right:150px;">- {{ note.note }}</div>
-                        {% endfor %}
-                        </div>
-                        {% endif %}
-                    {% endfor %}
+                        
+                    
                     </ul>
-                {% endif %}
+                
                 </div> 
-            {% endfor %}
+            
+                <div class='teachingRow' style="padding-bottom:5px;">
+                <span style='padding-bottom:5px; display:block;'><b>Empirical Asset Pricing </b>- PhD</span> 
+                
+                    <ul class='details'>
+                    
+                        <li class='detailRow'> <span style='text-align:left;'>Shanghai University of Finance and Economics </span>
+                        <span class='period' style='float: right;'>
+                            2021 - present 
+                        </span>
+                        </li>
+                        
+                    
+                    </ul>
+                
+                </div> 
+            
             </div>
-        {% endif %}
+        
 
         <!-- Service -->
 
@@ -464,11 +496,15 @@
         </div>
 
         <div id='presentationBlock' class="sectionBlock">
-            {% for presentation in resume.presentations %}
+            
                 <div class='presentionRow' style="padding-bottom:5px; display:flex;">
-                <span style = "float: left; flex: 8%;">{{presentation.year}}</span> <span style = "float: left; flex: 92%;">{% for school in presentation.schools %}{{school.schoolName}}{{ ";" if not loop.last }} {% endfor %}</span>
+                <span style = "float: left; flex: 8%;">2023</span> <span style = "float: left; flex: 92%;">Erasmus University Rotterdam*, Frankfurt School of Finance and Management* </span>
                 </div> 
-            {% endfor %}
+            
+                <div class='presentionRow' style="padding-bottom:5px; display:flex;">
+                <span style = "float: left; flex: 8%;">2021</span> <span style = "float: left; flex: 92%;">Wuhan University </span>
+                </div> 
+            
         </div>
 
         <!-- Awards -->
@@ -479,11 +515,19 @@
         </div>
 
         <div id='awardBlock' class="sectionBlock">
-            {% for award in resume.awards %}
+            
                 <div class='talkRow' style="padding-bottom:5px; display: flex;">
-                    <span style = "float: left; flex: 8%;">{{ award.year }}</span> <span style = "float: left; flex: 92%;">{{ award.text }}</span>
+                    <span style = "float: left; flex: 8%;">2021</span> <span style = "float: left; flex: 92%;">PWC 3535 Best Paper Nomination</span>
                 </div> 
-            {% endfor %}
+            
+                <div class='talkRow' style="padding-bottom:5px; display: flex;">
+                    <span style = "float: left; flex: 8%;">2020</span> <span style = "float: left; flex: 92%;">PWC 3535 Best Paper Nomination</span>
+                </div> 
+            
+                <div class='talkRow' style="padding-bottom:5px; display: flex;">
+                    <span style = "float: left; flex: 8%;">2018</span> <span style = "float: left; flex: 92%;">SMU Presidential Fellowship</span>
+                </div> 
+            
         </div>
 
         <!-- Footer -->
@@ -493,75 +537,67 @@
             <hr class='hline'>
           </div>  
 
-        {% if resume.skills|length %}
+        
 
         <div id='skills' class="sectionBlock">
             <div class='sectionName'>
                 <span>SKILLS</span>
             </div>
             <div class='sectionContent'>
-                {% for skill in resume.skills %}
+                
                     <div class='skillBlock'>
-                        <span class='title'>{% if skill.name %}{{ skill.name }}{% endif %}{% if skill.level %} <em>({{ skill.level }})</em>{% endif %}:</span>
-                        {% if skill.keywords|length %}
-                            {% for keyword in skill.keywords %}
-                            <span>{{ keyword }}</span>{{ ", " if not loop.last }}
-                            {% endfor %}
-                        {% endif %}
-                        {% if skill.details|length %}
-                            {% for detail in skill.details %}
-                            <span>{% if detail.text %}{{ detail.text }}{% endif %}{% if detail.comment %} <em>({{ detail.comment }})</em>{% endif %}{{ ", " if not loop.last }}</span>
-                            {% endfor %}
-                        {% endif %}
+                        <span class='title'>Programming:</span>
+                        
+                        
+                            
+                            <span>Python, </span>
+                            
+                            <span>R, </span>
+                            
+                            <span>Stata, </span>
+                            
+                            <span>SAS, </span>
+                            
+                            <span>SQL</span>
+                            
+                        
                     </div>
-                {% endfor %}
+                
             </div>
         </div>
 
         <hr class='hline'>
 
-        {% endif %}
+        
 
-        {% if resume.languages|length %}
+        
 
         <div id='languages' class="sectionBlock">
             <div class='sectionName'>
                 <span>LANGUAGES</span>
             </div>
             <div class='sectionContent'>
-                {% for language in resume.languages %}
-                <span class='language'>{{ language.language }}</span>
-                {% if language.fluency %}
-                <span class='fluency'><em>({{ language.fluency }})</em></span>
-                {% endif %}
-                {% if not loop.last %}<span>,</span>{% endif %}
-                {% endfor %}
+                
+                <span class='language'>Chinese</span>
+                
+                <span class='fluency'><em>(Native speaker)</em></span>
+                
+                <span>,</span>
+                
+                <span class='language'>English</span>
+                
+                <span class='fluency'><em>(Bilingual)</em></span>
+                
+                
+                
             </div>
             <hr class='hline'>
         </div>
-        {% endif %}
+        
 
-        {% if resume.interests|length %}
+        
 
-        <div id='interests' class="sectionBlock">
-            <div class='sectionName'>
-                <span>INTERESTS</span>
-            </div>
-            <div class='sectionContent'>
-                {% for interest in resume.interests %}
-                    <span class='name'>{{ interest.name }}</span>{% if interest.keywords|length %}<span class='keywords'> <em>[
-                    {% for keyword in interest.keywords %}
-                        {{ keyword }}{{ ", " if not loop.last }}
-                    {% endfor %}
-                    ]</em></span>{% endif %}{{ "<span>, </span>" if not loop.last }}
-                {% endfor %}
-            </div>
-            <hr class='hline'>
-        </div>
-
-        {% endif %}
-
-        <span style="text-align:center; display:block; margin-top:20px; font-size:14px;" id="updateDate"><b>Last updated: </b>{{date}}</span>
+        <span style="text-align:center; display:block; margin-top:20px; font-size:14px;" id="updateDate"><b>Last updated: </b>May 15, 2023</span>
         </div>
     </body>
 </html>

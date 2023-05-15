@@ -1,19 +1,74 @@
-<main>
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/simple.css">
+    <title>李江远 Jiangyuan LI</title>
+
+
+</head>
+<body>
+  <header>
+    <h1>李江远 LI Jiangyuan</h1>
+    <p>金融学副教授 Associate Professor in Finance</p>
+    <p>上海财经大学 Shanghai University of Finance and Economics</p>
+    
+    <nav>
+        <a href="/" class="current">关于我 About me</a>
+        <a href="/research.html" >研究 Research</a>
+        <a href="/code_and_data.html" >数据 Data</a>
+        <a href="/talks_and_classes.html" >教学与报告 Classes & Talks</a>
+        <a href="/Vitae.pdf" target = "_blank" >简历 CV</a>
+    </nav>
+  </header>
+
+  <main>
     <section>
         <h3 style = "margin-top: 25px;">Classes</h3>
-        {% for item in classes %}
+        
             <p style = "margin-bottom: -10px;">
-                <b>{{item.name}}</b> - {{item.level}}<br>
-                {% for school in item.schools %}
-                    <i style="margin-left: 20px;  margin-top: 5px; display: inline-block;">- {{school.schoolName}} - {{school.period}}</i><br>
-                    {% if school.notes|length %}
-                        {% for note in school.notes %}
-                            <i style="padding-left: 60px; display: inline-block; font-size:12pt;" >{{note.note}}</i><br>
-                        {% endfor %}
-                    {% endif %}
-                {% endfor %}
+                <b>Investment</b> - Undergraduate<br>
+                
+                    <i style="margin-left: 20px;  margin-top: 5px; display: inline-block;">- Shanghai University of Finance and Economics - 2021 - present</i><br>
+                    
+                
             </p>
-        {% endfor %}
+        
+            <p style = "margin-bottom: -10px;">
+                <b>Empirical Asset Pricing</b> - PhD<br>
+                
+                    <i style="margin-left: 20px;  margin-top: 5px; display: inline-block;">- Shanghai University of Finance and Economics - 2021 - present </i><br>
+                    
+                
+            </p>
+        
     </section>
 
 </main>
+
+  <footer>
+    <p>李江远 Jiangyuan LI</p>
+  </footer>
+
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-90851464-1', 'auto');
+    ga('send', 'pageview');
+
+     
+    var links = document.querySelectorAll('a');
+    Array.prototype.map.call(links, function(item) {
+        if (item.host != document.location.host) {
+            item.addEventListener('click', function() {
+                var action = item.getAttribute('data-action') || 'follow';
+                ga('send', 'event', 'outbound', action, item.href);
+            });
+        }
+    });
+    </script>
+</body>
+</html>
