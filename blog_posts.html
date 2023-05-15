@@ -1,100 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/static/simple.css">
-    <title>Ties de Kok</title>
-
-
-</head>
-<body>
-  <header>
-    <h1>Ties de Kok</h1>
-    <p>Assistant Professor in Accounting</p>
-    <p>University of Washington</p>
-    
-    <nav>
-        <a href="/" class="current">About me</a>
-        <a href="/research.html" >Research</a>
-        <a href="/code_and_data.html" >Code & Data</a>
-        <a href="/talks_and_classes.html" >Talks & Classes</a>
-        <a href="/blog_posts.html" >Blog Posts</a>
-        <a href="/Vitae.pdf" target = "_blank" >CV</a>     
-    </nav>
-  </header>
-
-  <main>
+<main>
 <section>
     <h3>Blog Articles</h3>
-    
+    {% for item in articles %}
         <p style = "margin-bottom: 5px;">
-            <b>Beyond chat-bots: the power of prompt-based GPT models for downstream NLP tasks</b><br>
-            <blockquote style = "text-align: justify; display: inline-block; margin: 0; margin-left: 30px;">Generative Pre-trained Transformer (GPT) models have clear uses for generative text applications such as auto-complete and chatbots. However, it is less obvious how researchers and data scientists can use the power of these GPT models for their downstream task. This article describes how one can use creative prompt-engineering to use GPT models for virtually any NLP tasks, and it discusses the pros-and-cons of doing so.</blockquote><br>
-            <i style = "padding-top: 15px; display: inline-block;">April, 2022<i> - <a href = "https://medium.com/towards-data-science/beyond-chat-bots-the-power-of-prompt-based-gpt-models-for-downstream-nlp-tasks-21eff204d599" target = "_blank">Medium</a> </i></i><br>
+            <b>{{item.title}}</b><br>
+            {% if item.summary|length %}<blockquote style = "text-align: justify; display: inline-block; margin: 0; margin-left: 30px;">{{item.summary}}</blockquote><br>{% endif %}
+            <i style = "padding-top: 15px; display: inline-block;">{{item.date}}{% if item.links|length %}<i>{% for link_item in item.links %} - <a href = "{{link_item.href}}" target = "_blank">{{link_item.label}}</a> {% endfor %}</i>{% endif %}</i><br>
         </p>
         <hr style = "margin: 1rem auto;">
-    
-        <p style = "margin-bottom: 5px;">
-            <b>Creating a collaborative virtual classroom: the case of Discord</b><br>
-            <blockquote style = "text-align: justify; display: inline-block; margin: 0; margin-left: 30px;">Creating a collaborative classroom experience can be challenging when teaching remotely. This article describes how I have successfully used Discord as an alternative to Zoom to create a collaborative classroom environment.</blockquote><br>
-            <i style = "padding-top: 15px; display: inline-block;">June, 2020<i> - <a href = "https://eaa-online.org/arc/blog/2020/06/22/creating-collaborative-virtual-classroom-case-discord/" target = "_blank">EAA ARC</a> </i></i><br>
-        </p>
-        <hr style = "margin: 1rem auto;">
-    
-        <p style = "margin-bottom: 5px;">
-            <b>Dashboard to manage student questions in the Zoom chat</b><br>
-            <blockquote style = "text-align: justify; display: inline-block; margin: 0; margin-left: 30px;">Managing student questions through the standard Zoom chat can be challenging when teaching remotely. This article demonstrates a Chrome extension I developed to make it easier to manage student questions on Zoom.</blockquote><br>
-            <i style = "padding-top: 15px; display: inline-block;">April, 2020<i> - <a href = "https://medium.com/@kok.ties/dashboard-to-manage-student-questions-in-the-zoom-chat-90481109a144" target = "_blank">Medium</a> </i></i><br>
-        </p>
-        <hr style = "margin: 1rem auto;">
-    
-        <p style = "margin-bottom: 5px;">
-            <b>How to keep your research projects organized: folder structure</b><br>
-            <blockquote style = "text-align: justify; display: inline-block; margin: 0; margin-left: 30px;">Keeping your research projects is fundamentally important to minimize mistakes, maintain replicability, and to reduce the mental burden of managing complex projects. This article describes my folder structure and the philosophy behind it.</blockquote><br>
-            <i style = "padding-top: 15px; display: inline-block;">November, 2018<i> - <a href = "https://towardsdatascience.com/how-to-keep-your-research-projects-organized-part-1-folder-structure-10bd56034d3a" target = "_blank">Medium</a> </i></i><br>
-        </p>
-        <hr style = "margin: 1rem auto;">
-    
-        <p style = "margin-bottom: 5px;">
-            <b>Retrieving data from WRDS directly using Python, R, and Stata</b><br>
-            <blockquote style = "text-align: justify; display: inline-block; margin: 0; margin-left: 30px;">Programmatically retrieving data from WRDS databases through Python can be challenging. This article provides various code examples of how one can use PostgreSQL and Python to programmatically download data from WRDS.</blockquote><br>
-            <i style = "padding-top: 15px; display: inline-block;">February, 2018<i> - <a href = "https://eaa-online.org/arc/blog/2018/02/08/retrieving-data-wrds-directly-using-python-r-and-stata/" target = "_blank">EAA ARC</a> </i></i><br>
-        </p>
-        <hr style = "margin: 1rem auto;">
-    
-        <p style = "margin-bottom: 5px;">
-            <b>Use Python to calculate the facial width to height ratio (fWHR)</b><br>
-            <blockquote style = "text-align: justify; display: inline-block; margin: 0; margin-left: 30px;">Manually calculating facial features such as the facial width-to-height ratio is time-consuming. This article describes how one can use Python and machine learning models to automatically calculate the fWHR.</blockquote><br>
-            <i style = "padding-top: 15px; display: inline-block;">November, 2017<i> - <a href = "https://eaa-online.org/arc/blog/2017/11/22/use-python-calculate-facial-width-height-ratio-fwhr/" target = "_blank">EAA ARC</a> </i></i><br>
-        </p>
-        <hr style = "margin: 1rem auto;">
-    
+    {% endfor %}
 </section>
 </main>
-
-  <footer>
-    <p>Ties de Kok - Generated using a <a href = "https://github.com/TiesdeKok/TiesdeKok.github.io" target = "_blank">Python script 🐍</a> and <a href = "https://simplecss.org/" target= "_blank">simple.css</a>.</p>
-  </footer>
-
-  <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-    ga('create', 'UA-90851464-1', 'auto');
-    ga('send', 'pageview');
-
-     
-    var links = document.querySelectorAll('a');
-    Array.prototype.map.call(links, function(item) {
-        if (item.host != document.location.host) {
-            item.addEventListener('click', function() {
-                var action = item.getAttribute('data-action') || 'follow';
-                ga('send', 'event', 'outbound', action, item.href);
-            });
-        }
-    });
-    </script>
-</body>
-</html>

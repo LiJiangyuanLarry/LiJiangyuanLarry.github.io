@@ -5,7 +5,7 @@
 	<meta charset='utf-8'>
 	<meta name='viewport' content='width=device-width, user-scalable=no, minimal-ui'>
 
-	<title>Jiangyuan LI 李江远</title>
+	<title>{{ resume.basics.name }}</title>
 
 	<style>
         body {
@@ -263,12 +263,12 @@
         
         <div id='nameBlock' class='largeFont'>
             <span class='name'>
-                Jiangyuan LI 李江远
+                {{ resume.basics.name }}
             </span>
             <br>
-            
-                <span class='label'>Curriculum Vitae</span>
-            
+            {% if resume.basics.label %}
+                <span class='label'>{{ resume.basics.label }}</span>
+            {% endif %}
         </div>
 
         <hr class='hline'>
@@ -276,54 +276,45 @@
         <div id='basicsBlock' class='smallFont'>
         <div class='contactBlock'>
             <div class='colLeft'>
-            
-            <span class='currentAffiliation'>Foster School of Business, University of Washington</span> <br>
-            
-            
-            <span class='addressOffice'>PACCAR Hall, Box 353226</span><br>
-            
-            
-            <span class='addressDetails'>Seattle, WA 98195</span><br>
-            
+            {% if resume.basics.currentAffiliation %}
+            <span class='currentAffiliation'>{{ resume.basics.currentAffiliation }}</span> <br>
+            {% endif %}
+            {% if resume.basics.addressOffice %}
+            <span class='addressOffice'>{{ resume.basics.addressOffice }}</span><br>
+            {% endif %}
+            {% if resume.basics.addressDetails %}
+            <span class='addressDetails'>{{ resume.basics.addressDetails }}</span><br>
+            {% endif %}
             </div>
 
             <div class='colRight'>
-            
-                <span class='phone'>206 685 2252</span><br>
-            
-            
-                <span class='email'>tdekok@uw.edu</span><br>
-            
-            
-                <span class='website'><a href="https://www.tiesdekok.com">https://www.tiesdekok.com</a></span><br>
-            
+            {% if resume.basics.phone %}
+                <span class='phone'>{{ resume.basics.phone }}</span><br>
+            {% endif %}
+            {% if resume.basics.email %}
+                <span class='email'>{{ resume.basics.email }}</span><br>
+            {% endif %}
+            {% if resume.basics.website %}
+                <span class='website'><a href="{{ resume.basics.website }}">{{ resume.basics.website }}</a></span><br>
+            {% endif %}
             </div>
         </div>
 
         
-        
+        {% if resume.basics.profiles|length %}
             <div id='profilesBlock'>
-            
-                
+            {% for profile in resume.basics.profiles %}
+                {% if profile.url %}
                 <div>
-                    
-                    <span style='font-weight: bold;'>GitHub:</span> 
-                    
-                    <a href="https://www.github.com/tiesdekok">https://www.github.com/tiesdekok</a> <br>
+                    {% if profile.label %}
+                    <span style='font-weight: bold;'>{{ profile.label }}:</span> 
+                    {% endif %}
+                    <a href="{{ profile.url }}">{{ profile.url }}</a> <br>
                 </div>
-                
-            
-                
-                <div>
-                    
-                    <span style='font-weight: bold;'>LinkedIn:</span> 
-                    
-                    <a href="https://www.linkedin.com/in/tiesdekok">https://www.linkedin.com/in/tiesdekok</a> <br>
-                </div>
-                
-            
+                {% endif %}
+            {% endfor %}
             </div>
-        
+        {% endif %}
         </div>
 
         <div class='lineBlock'>
@@ -333,50 +324,30 @@
 
         <!-- Academic Appointments -->
 
-        
+        {% if resume.appointments|length %}
             <div id='appointmentsBlock' class="sectionBlock">
-            
+            {% for appointment in resume.appointments %}
                 <div class='appointmentsRow'>
                 <div class='school'>
-                    University of Washington, Foster School of Business
-                    
-                    – Assistant Professor
-                    
+                    {{ appointment.school }}
+                    {% if appointment.position %}
+                    – {{ appointment.position }}
+                    {% endif %}
                 </div>
                 <div class='period' style='text-align:right;'>
-                    2019 – present
+                    {{ appointment.startDate }} – {{ appointment.endDate }}
                 </div>
-                
+                {% if appointment.details|length %}
+                    <ul class='details'>
+                    {% for detail in appointment.details %}
+                        <li class='detailRow'> {{ detail.text }}</li>
+                    {% endfor %}
+                    </ul>
+                {% endif %}
                 </div> 
-            
-                <div class='appointmentsRow'>
-                <div class='school'>
-                    Tilburg University
-                    
-                    – PhD Researcher
-                    
-                </div>
-                <div class='period' style='text-align:right;'>
-                    2015 – 2019
-                </div>
-                
-                </div> 
-            
-                <div class='appointmentsRow'>
-                <div class='school'>
-                    Tilburg University
-                    
-                    – Research & Teaching Assistant
-                    
-                </div>
-                <div class='period' style='text-align:right;'>
-                    2014 – 2015
-                </div>
-                
-                </div> 
-            
+            {% endfor %}
             </div>
-        
+        {% endif %}
 
         <!-- Education -->
 
@@ -385,82 +356,33 @@
             <hr class='hline'>
         </div>
 
-        
+        {% if resume.education|length %}
             <div id='educationBlock' class="sectionBlock">
-            
+            {% for education in resume.education %}
                 <div class='appointmentsRow'>
                 <div class='school'>
-                
-                PhD in Accounting
-                
-                
-                – Tilburg University
-                
+                {% if education.degree %}
+                {{ education.degree }}
+                {% endif %}
+                {% if education.school %}
+                – {{ education.school }}
+                {% endif %}
             </div>
             <div class='period' style='text-align:right;'>
-                2015 – 2019
+                {{ education.startDate }} – {{ education.endDate }}
             </div>
-            
+            {% if education.details|length %}
                 <ul class='details'>
-                
-                    <li class='detailRow'> Title: 'Essays on reporting and information processing'</li>
-                
-                    <li class='detailRow'> PhD awarded May 20th 2019 with the distinction Cum Laude</li>
-                
-                    <li class='detailRow'> Tilburg University, the Netherlands</li>
-                
+                {% for detail in education.details %}
+                    <li class='detailRow'> {{ detail.text }}</li>
+                {% endfor %}
                 </ul>
-            
+            {% endif %}
             </div> 
-            
-                <div class='appointmentsRow'>
-                <div class='school'>
-                
-                Visiting Scholar (6 months)
-                
-                
-                – University of Washington
-                
-            </div>
-            <div class='period' style='text-align:right;'>
-                2018 – 2018
-            </div>
-            
-            </div> 
-            
-                <div class='appointmentsRow'>
-                <div class='school'>
-                
-                MSc Research Master in Accounting
-                
-                
-                – Tilburg University
-                
-            </div>
-            <div class='period' style='text-align:right;'>
-                2013 – 2015
-            </div>
-            
-            </div> 
-            
-                <div class='appointmentsRow'>
-                <div class='school'>
-                
-                BSc Business Administration (with distinction)
-                
-                
-                – Tilburg University
-                
-            </div>
-            <div class='period' style='text-align:right;'>
-                2010 – 2013
-            </div>
-            
-            </div> 
-            
+            {% endfor %}
 
             </div>
-        
+        {% endif %}
 
         <!-- Research -->
 
@@ -469,76 +391,35 @@
             <hr class='hline'>
         </div>
 
-        
+        {% if resume.publishedPapers|length %}
             <div id='pubsBlock' class="sectionBlock">
-            
+            {% for paper in resume.publishedPapers %}
                 <div class='pubsRow'>
-                <span>"How Resilient are Firms' Financial Reporting Processes?" 
-                    (with Ed deHaan, Dawn Matsumoto, and Edgar Rodriguez-Vazquez).  Management Science, 2023
+                <span>"{{paper.title}}" 
+                    {% if paper.coauthors %}({{paper.coauthors}}). {% endif %} {{paper.journal}}{% if paper.year %}, {% endif %}{{paper.year}}
                     </span>
                 </div> 
-            
-                <div class='pubsRow'>
-                <span>"The Prevalence and Validity of EBITDA as a Performance Measure" 
-                    (with Arnt Verriest and Jan Bouwens).  Accounting Auditing Control, 2019
-                    </span>
-                </div> 
-            
+            {% endfor %}
             </div>
-        
+        {% endif %}
         
         <div class='lineBlock'>
             <div class='lineHeader'>Working Papers</div>
             <hr class='hline'>
         </div>
 
-        
+        {% if resume.workingPapers|length %}
             <div id='workingBlock' class="sectionBlock">
-            
+            {% for paper in resume.workingPapers %}
                 <div class='pubsRow'>
                     <span>
-                        "Generative LLMs and Textual Analysis in Accounting: (Chat)GPT as Research Assistant?" 
-                        (Solo-authored). 
+                        "{{ paper.title }}" 
+                        {% if paper.coauthors %}({{ paper.coauthors }}). {% endif %}{{ paper.extra }}
                     </span>     
                 </div> 
-            
-                <div class='pubsRow'>
-                    <span>
-                        "Confused Readers: A Modular Approach for Measuring Business Complexity" 
-                        (with Beth Blankespoor, Darren Bernard, and Sara Toynbee). 
-                    </span>     
-                </div> 
-            
-                <div class='pubsRow'>
-                    <span>
-                        "Corporate Engagement in Public Discourse " 
-                        (with Beth Blankespoor and Xue Li). 
-                    </span>     
-                </div> 
-            
-                <div class='pubsRow'>
-                    <span>
-                        "Update Frequency and Funder Involvement in Reward Crowdfunding Markets" 
-                        (Solo-authored). 
-                    </span>     
-                </div> 
-            
-                <div class='pubsRow'>
-                    <span>
-                        "Can Centralization Improve the Use of Soft Information? Evidence from a Field Study and Lab Experiment" 
-                        (with Jan Bouwens). 
-                    </span>     
-                </div> 
-            
-                <div class='pubsRow'>
-                    <span>
-                        "Measuring and predicting investor disagreement from narrative disclosures using AI" 
-                        (with Victor van Pelt and Christoph Sextroh). 
-                    </span>     
-                </div> 
-            
+            {% endfor %}
             </div>
-        
+        {% endif %}
 
         <!-- Teaching -->
 
@@ -547,133 +428,33 @@
             <hr class='hline'>
         </div>
 
-        
+        {% if resume.teaching|length %}
             <div id='teachingBlock' class="sectionBlock">
-            
+            {% for teaching in resume.teaching %}
                 <div class='teachingRow' style="padding-bottom:5px;">
-                <span style='padding-bottom:5px; display:block;'><b>Accounting Systems & Analytics </b>- Undergraduate</span> 
-                
+                <span style='padding-bottom:5px; display:block;'><b>{{ teaching.name }} </b>- {{ teaching.level }}</span> 
+                {% if teaching.schools|length %}
                     <ul class='details'>
-                    
-                        <li class='detailRow'> <span style='text-align:left;'>University of Washington </span>
+                    {% for school in teaching.schools %}
+                        <li class='detailRow'> <span style='text-align:left;'>{{ school.schoolName }} </span>
                         <span class='period' style='float: right;'>
-                            2021 - present
+                            {{ school.period }}
                         </span>
                         </li>
-                        
+                        {% if school.notes|length %}
                         <div style="margin-bottom: 5px;">
-                        
-                            <div style="margin-left: 10px; margin-right:150px;">- ACCTG 320 - Case-based class on developing the analytical mindset and analytical skillset for accounting and business professionals.</div>
-                        
+                        {% for note in school.notes %}
+                            <div style="margin-left: 10px; margin-right:150px;">- {{ note.note }}</div>
+                        {% endfor %}
                         </div>
-                        
-                    
+                        {% endif %}
+                    {% endfor %}
                     </ul>
-                
+                {% endif %}
                 </div> 
-            
-                <div class='teachingRow' style="padding-bottom:5px;">
-                <span style='padding-bottom:5px; display:block;'><b>Python Programming </b>- PhD, Faculty</span> 
-                
-                    <ul class='details'>
-                    
-                        <li class='detailRow'> <span style='text-align:left;'>University of Washington </span>
-                        <span class='period' style='float: right;'>
-                            2018, 2020 - present (annual)
-                        </span>
-                        </li>
-                        
-                        <div style="margin-bottom: 5px;">
-                        
-                            <div style="margin-left: 10px; margin-right:150px;">- Github page: <a href='https://github.com/TiesdeKok/acctg-579B' target='_blank'>https://github.com/TiesdeKok/acctg-579B</a></div>
-                        
-                        </div>
-                        
-                    
-                        <li class='detailRow'> <span style='text-align:left;'>Limperg Institute </span>
-                        <span class='period' style='float: right;'>
-                            2019 - present (annual)
-                        </span>
-                        </li>
-                        
-                        <div style="margin-bottom: 5px;">
-                        
-                            <div style="margin-left: 10px; margin-right:150px;">- Github page: <a href='https://github.com/TiesdeKok/limperg_python' target='_blank'>https://github.com/TiesdeKok/limperg_python</a></div>
-                        
-                        </div>
-                        
-                    
-                        <li class='detailRow'> <span style='text-align:left;'>Tilburg University </span>
-                        <span class='period' style='float: right;'>
-                            2016, 2017
-                        </span>
-                        </li>
-                        
-                    
-                        <li class='detailRow'> <span style='text-align:left;'>University of Bristol </span>
-                        <span class='period' style='float: right;'>
-                            2018
-                        </span>
-                        </li>
-                        
-                    
-                    </ul>
-                
-                </div> 
-            
-                <div class='teachingRow' style="padding-bottom:5px;">
-                <span style='padding-bottom:5px; display:block;'><b>Introductory Financial Accounting and Management Accounting </b>- Undergraduate</span> 
-                
-                    <ul class='details'>
-                    
-                        <li class='detailRow'> <span style='text-align:left;'>University of Washington </span>
-                        <span class='period' style='float: right;'>
-                            2020 - 2021
-                        </span>
-                        </li>
-                        
-                        <div style="margin-bottom: 5px;">
-                        
-                            <div style="margin-left: 10px; margin-right:150px;">- ACCTG 219 - Essentials of Accounting (FA & MA) for non-business school students.</div>
-                        
-                        </div>
-                        
-                    
-                        <li class='detailRow'> <span style='text-align:left;'>Tilburg University </span>
-                        <span class='period' style='float: right;'>
-                            2015 - 2017
-                        </span>
-                        </li>
-                        
-                        <div style="margin-bottom: 5px;">
-                        
-                            <div style="margin-left: 10px; margin-right:150px;">- Accounting 1 - Financial Accounting.</div>
-                        
-                        </div>
-                        
-                    
-                    </ul>
-                
-                </div> 
-            
-                <div class='teachingRow' style="padding-bottom:5px;">
-                <span style='padding-bottom:5px; display:block;'><b>Financial Accounting Theory: Stata tutorials </b>- Master</span> 
-                
-                    <ul class='details'>
-                    
-                        <li class='detailRow'> <span style='text-align:left;'>Tilburg University </span>
-                        <span class='period' style='float: right;'>
-                            2016 - 2017
-                        </span>
-                        </li>
-                        
-                    
-                    </ul>
-                
-                </div> 
-            
+            {% endfor %}
             </div>
-        
+        {% endif %}
 
         <!-- Service -->
 
@@ -683,124 +464,12 @@
         </div>
 
         <div id='presentationBlock' class="sectionBlock">
-            
+            {% for presentation in resume.presentations %}
                 <div class='presentionRow' style="padding-bottom:5px; display:flex;">
-                <span style = "float: left; flex: 8%;">2023</span> <span style = "float: left; flex: 92%;">Cornell - CETAFE Conference </span>
+                <span style = "float: left; flex: 8%;">{{presentation.year}}</span> <span style = "float: left; flex: 92%;">{% for school in presentation.schools %}{{school.schoolName}}{{ ";" if not loop.last }} {% endfor %}</span>
                 </div> 
-            
-                <div class='presentionRow' style="padding-bottom:5px; display:flex;">
-                <span style = "float: left; flex: 8%;">2022</span> <span style = "float: left; flex: 92%;">UBCOW Conference </span>
-                </div> 
-            
-                <div class='presentionRow' style="padding-bottom:5px; display:flex;">
-                <span style = "float: left; flex: 8%;">2021</span> <span style = "float: left; flex: 92%;">Ludwig-Maximilians-Universität München; Vrije Universiteit Amsterdam; Stanford University </span>
-                </div> 
-            
-                <div class='presentionRow' style="padding-bottom:5px; display:flex;">
-                <span style = "float: left; flex: 8%;">2020</span> <span style = "float: left; flex: 92%;">FARS mid-year meeting </span>
-                </div> 
-            
-                <div class='presentionRow' style="padding-bottom:5px; display:flex;">
-                <span style = "float: left; flex: 8%;">2019</span> <span style = "float: left; flex: 92%;">University of Notre Dame; UT Dallas; University of Iowa; University of Utah; Northwestern / Kellogg; Erasmus University Rotterdam; Boston College; Yale University; Harvard Business School; University of British Columbia; University of Washington; Amsterdam Business School </span>
-                </div> 
-            
-                <div class='presentionRow' style="padding-bottom:5px; display:flex;">
-                <span style = "float: left; flex: 8%;">2018</span> <span style = "float: left; flex: 92%;">Baruch College; Miami Rookie Camp; EAA Madrid Talent Workshop; University of Lancaster; University of Washington; University of Bristol; EAA Doctoral Colloquium, Milan </span>
-                </div> 
-            
-                <div class='presentionRow' style="padding-bottom:5px; display:flex;">
-                <span style = "float: left; flex: 8%;">2017</span> <span style = "float: left; flex: 92%;">GMARS, Sydney; EAA Annual Congress, Valencia </span>
-                </div> 
-            
-                <div class='presentionRow' style="padding-bottom:5px; display:flex;">
-                <span style = "float: left; flex: 8%;">2016</span> <span style = "float: left; flex: 92%;">AAA Annual Meeting, New York </span>
-                </div> 
-            
+            {% endfor %}
         </div>
-                
-        <div class='lineBlock'>
-            <div class='lineHeader'>Invited Talks</div>
-            <hr class='hline'>
-        </div>
-
-        <div id='talkBlock' class="sectionBlock">
-            
-            <div class='talkRow' style="padding-bottom:5px; display: flex;">
-                <span style = "float: left; flex: 8%;">2023</span> <span style = "float: left; flex: 92%;">Workshop on modern NLP techniques in Accounting<br><i>European Accounting Association - Virtual</i></span>
-            </div> 
-            
-            <div class='talkRow' style="padding-bottom:5px; display: flex;">
-                <span style = "float: left; flex: 8%;">2023</span> <span style = "float: left; flex: 92%;">Going beyond ChatGPT: an introduction to prompt engineering and LLMs (90 minute tutorial)<br><i>PyData Seattle 2023 - Microsoft Campus</i></span>
-            </div> 
-            
-            <div class='talkRow' style="padding-bottom:5px; display: flex;">
-                <span style = "float: left; flex: 8%;">2022</span> <span style = "float: left; flex: 92%;">A Primer on Textual Analysis<br><i>AAA Management Accounting Section - 2022 - Doctoral Consortium</i></span>
-            </div> 
-            
-            <div class='talkRow' style="padding-bottom:5px; display: flex;">
-                <span style = "float: left; flex: 8%;">2021</span> <span style = "float: left; flex: 92%;">Measuring and predicting investor disagreement from narrative disclosures using AI<br><i>Rotman CPA Ontario Centre for Accounting Innovation Research Conference</i></span>
-            </div> 
-            
-            <div class='talkRow' style="padding-bottom:5px; display: flex;">
-                <span style = "float: left; flex: 8%;">2018</span> <span style = "float: left; flex: 92%;">PhD Forum Break-out: NLP with Python for Accounting Research<br><i>European Accounting Association Annual Congress</i></span>
-            </div> 
-            
-            <div class='talkRow' style="padding-bottom:5px; display: flex;">
-                <span style = "float: left; flex: 8%;">2017</span> <span style = "float: left; flex: 92%;">Plenary Session PhD Forum: Accounting Research Center<br><i>European Accounting Association Annual Congress</i></span>
-            </div> 
-            
-            <div class='talkRow' style="padding-bottom:5px; display: flex;">
-                <span style = "float: left; flex: 8%;">2016</span> <span style = "float: left; flex: 92%;">Combine Stata with Python using the Jupyter Notebook<br><i>Stata Conference, University of Chicago Booth School of Business</i></span>
-            </div> 
-            
-            <div class='talkRow' style="padding-bottom:5px; display: flex;">
-                <span style = "float: left; flex: 8%;">2016</span> <span style = "float: left; flex: 92%;">Plenary Session PhD Forum: Ethics, Transparency, and Replicability<br><i>European Accounting Association Annual Congress</i></span>
-            </div> 
-            
-        </div>
-
-        <div class='lineBlock'>
-            <div class='lineHeader'>External Service</div>
-            <hr class='hline'>
-        </div>
-
-        <div style="margin-bottom:-5px;">Ad Hoc Referee</div>
-
-        <ul style="margin-bottom: 10px;">
-            
-                <li>Journal of Accounting and Economics</li>
-            
-                <li>Journal of Accounting Research</li>
-            
-                <li>The Accounting Review</li>
-            
-                <li>Contemporary Accounting Research</li>
-            
-                <li>Journal of Business Finance & Accounting</li>
-            
-                <li>European Accounting Review</li>
-            
-                <li>Schmalenbach Journal of Business Research</li>
-            
-                <li>Asia-Pacific Journal of Accounting and Economics</li>
-            
-        </ul>
-
-        <div style="margin-bottom:-5px;">Conference Referee</div>
-
-        <ul style="margin-bottom: 0px;">
-            
-                <li>Hawaii Accounting Research Conference</li>
-            
-                <li>AAA - FARS Conference</li>
-            
-                <li>EAA Annual Meeting</li>
-            
-                <li>AAA Annual Meeting</li>
-            
-                <li>AFAANZ Annual Conference</li>
-            
-        </ul>
 
         <!-- Awards -->
 
@@ -810,116 +479,11 @@
         </div>
 
         <div id='awardBlock' class="sectionBlock">
-            
+            {% for award in resume.awards %}
                 <div class='talkRow' style="padding-bottom:5px; display: flex;">
-                    <span style = "float: left; flex: 8%;">2021</span> <span style = "float: left; flex: 92%;">Teaching Award for Doctoral Studies- the University of Münster</span>
+                    <span style = "float: left; flex: 8%;">{{ award.year }}</span> <span style = "float: left; flex: 92%;">{{ award.text }}</span>
                 </div> 
-            
-                <div class='talkRow' style="padding-bottom:5px; display: flex;">
-                    <span style = "float: left; flex: 8%;">2019</span> <span style = "float: left; flex: 92%;">FARS Excellence in Reviewing Award</span>
-                </div> 
-            
-                <div class='talkRow' style="padding-bottom:5px; display: flex;">
-                    <span style = "float: left; flex: 8%;">2019</span> <span style = "float: left; flex: 92%;">Runner-up best PhD dissertation at TiSEM (Tilburg University, university-wide)</span>
-                </div> 
-            
-                <div class='talkRow' style="padding-bottom:5px; display: flex;">
-                    <span style = "float: left; flex: 8%;">2019</span> <span style = "float: left; flex: 92%;">NVIDIA GPU Grand “Accelerate Data Science”</span>
-                </div> 
-            
-                <div class='talkRow' style="padding-bottom:5px; display: flex;">
-                    <span style = "float: left; flex: 8%;">2018</span> <span style = "float: left; flex: 92%;">Limperg Scholarship:6-month visit to the University of Washington</span>
-                </div> 
-            
-                <div class='talkRow' style="padding-bottom:5px; display: flex;">
-                    <span style = "float: left; flex: 8%;">2017</span> <span style = "float: left; flex: 92%;">NVIDIA GPU Grand for deep-learning research</span>
-                </div> 
-            
-                <div class='talkRow' style="padding-bottom:5px; display: flex;">
-                    <span style = "float: left; flex: 8%;">2016</span> <span style = "float: left; flex: 92%;">Ph.D. student travel grant - AAA annual meeting</span>
-                </div> 
-            
-        </div>
-
-        <div class='lineBlock'>
-            <div class='lineHeader'>Open Source Projects</div>
-            <hr class='hline'>
-        </div>
-
-        <div id='OSprojectsBlock' class="sectionBlock">
-            
-                <div class='projectRow' style="padding-bottom:5px;">
-                    <span style='padding-bottom:5px;'><i>IPyStata</i></span>
-                    <span style="margin-left:15px; display:block;">Python package to combine Python and Stata in a jupyter notebook. <br> Officially integrated into Stata as of Stata 17.</span>
-                    
-                        <span style="margin-left:15px; display:block; margin-bottom: 10px;"><a href=https://github.com/TiesdeKok/ipystata>https://github.com/TiesdeKok/ipystata</a></span>
-                    
-                </div> 
-            
-                <div class='projectRow' style="padding-bottom:5px;">
-                    <span style='padding-bottom:5px;'><i>ChatGPT for Jupyter - Chrome Extension</i></span>
-                    <span style="margin-left:15px; display:block;">A browser extension to provide various AI helper functions in Jupyter Notebooks, powered by ChatGPT.</span>
-                    
-                        <span style="margin-left:15px; display:block; margin-bottom: 10px;"><a href=https://github.com/TiesdeKok/chat-gpt-jupyter-extension>https://github.com/TiesdeKok/chat-gpt-jupyter-extension</a></span>
-                    
-                </div> 
-            
-                <div class='projectRow' style="padding-bottom:5px;">
-                    <span style='padding-bottom:5px;'><i>SUMHDFE</i></span>
-                    <span style="margin-left:15px; display:block;">Stata package to provide Fixed Effects Diagnostics.</span>
-                    
-                        <span style="margin-left:15px; display:block; margin-bottom: 10px;"><a href=https://github.com/ed-dehaan/sumhdfe>https://github.com/ed-dehaan/sumhdfe</a></span>
-                    
-                </div> 
-            
-                <div class='projectRow' style="padding-bottom:5px;">
-                    <span style='padding-bottom:5px;'><i>Fast XBRL Parser</i></span>
-                    <span style="margin-left:15px; display:block;">Fast, easy, and lightweight XBRL to JSON or CSV parser written in Rust.</span>
-                    
-                        <span style="margin-left:15px; display:block; margin-bottom: 10px;"><a href=https://github.com/TiesdeKok/fast_xbrl_parser>https://github.com/TiesdeKok/fast_xbrl_parser</a></span>
-                    
-                </div> 
-            
-                <div class='projectRow' style="padding-bottom:5px;">
-                    <span style='padding-bottom:5px;'><i>Learn Python for Research</i></span>
-                    <span style="margin-left:15px; display:block;">Github repository with everything you need to get started with Python for (social science) research.</span>
-                    
-                        <span style="margin-left:15px; display:block; margin-bottom: 10px;"><a href=https://github.com/TiesdeKok/LearnPythonforResearch>https://github.com/TiesdeKok/LearnPythonforResearch</a></span>
-                    
-                </div> 
-            
-                <div class='projectRow' style="padding-bottom:5px;">
-                    <span style='padding-bottom:5px;'><i>Python NLP Tutorial</i></span>
-                    <span style="margin-left:15px; display:block;">Github repository with everything you need to get started with Python for text mining / NLP.</span>
-                    
-                        <span style="margin-left:15px; display:block; margin-bottom: 10px;"><a href=https://github.com/TiesdeKok/Python_NLP_Tutorial>https://github.com/TiesdeKok/Python_NLP_Tutorial</a></span>
-                    
-                </div> 
-            
-                <div class='projectRow' style="padding-bottom:5px;">
-                    <span style='padding-bottom:5px;'><i>Zoom Questions Manager</i></span>
-                    <span style="margin-left:15px; display:block;">A Chrome extension to manage questions when teaching remotely through Zoom</span>
-                    
-                        <span style="margin-left:15px; display:block; margin-bottom: 10px;"><a href=https://github.com/TiesdeKok/zoom-question-manager>https://github.com/TiesdeKok/zoom-question-manager</a></span>
-                    
-                </div> 
-            
-                <div class='projectRow' style="padding-bottom:5px;">
-                    <span style='padding-bottom:5px;'><i>JupyterLab Code Bookmarks</i></span>
-                    <span style="margin-left:15px; display:block;">A JupyterLab extension that adds code bookmark functionality, similar to the bookmarks VSCode extension.</span>
-                    
-                        <span style="margin-left:15px; display:block; margin-bottom: 10px;"><a href=https://github.com/TiesdeKok/jupyterlab_code_bookmarks>https://github.com/TiesdeKok/jupyterlab_code_bookmarks</a></span>
-                    
-                </div> 
-            
-                <div class='projectRow' style="padding-bottom:5px;">
-                    <span style='padding-bottom:5px;'><i>Folder Structure Generator</i></span>
-                    <span style="margin-left:15px; display:block;">Web app to automatically generate a folder structure for new research projects.</span>
-                    
-                        <span style="margin-left:15px; display:block; margin-bottom: 10px;"><a href=https://www.tiesdekok.com/folder-structure-generator/>https://www.tiesdekok.com/folder-structure-generator/</a></span>
-                    
-                </div> 
-            
+            {% endfor %}
         </div>
 
         <!-- Footer -->
@@ -929,97 +493,75 @@
             <hr class='hline'>
           </div>  
 
-        
+        {% if resume.skills|length %}
 
         <div id='skills' class="sectionBlock">
             <div class='sectionName'>
                 <span>SKILLS</span>
             </div>
             <div class='sectionContent'>
-                
+                {% for skill in resume.skills %}
                     <div class='skillBlock'>
-                        <span class='title'>Programming:</span>
-                        
-                        
-                            
-                            <span>Python, </span>
-                            
-                            <span>Javascript/TypeScript, </span>
-                            
-                            <span>Rust</span>
-                            
-                        
+                        <span class='title'>{% if skill.name %}{{ skill.name }}{% endif %}{% if skill.level %} <em>({{ skill.level }})</em>{% endif %}:</span>
+                        {% if skill.keywords|length %}
+                            {% for keyword in skill.keywords %}
+                            <span>{{ keyword }}</span>{{ ", " if not loop.last }}
+                            {% endfor %}
+                        {% endif %}
+                        {% if skill.details|length %}
+                            {% for detail in skill.details %}
+                            <span>{% if detail.text %}{{ detail.text }}{% endif %}{% if detail.comment %} <em>({{ detail.comment }})</em>{% endif %}{{ ", " if not loop.last }}</span>
+                            {% endfor %}
+                        {% endif %}
                     </div>
-                
-                    <div class='skillBlock'>
-                        <span class='title'>Tools:</span>
-                        
-                        
-                            
-                            <span>R, </span>
-                            
-                            <span>Stata, </span>
-                            
-                            <span>Alteryx, </span>
-                            
-                            <span>Tableau</span>
-                            
-                        
-                    </div>
-                
-                    <div class='skillBlock'>
-                        <span class='title'>Misc.:</span>
-                        
-                        
-                            
-                            <span>SQL, </span>
-                            
-                            <span>LaTeX, </span>
-                            
-                            <span>DevOps, </span>
-                            
-                            <span>CUDA, </span>
-                            
-                            <span>ML Engineering</span>
-                            
-                        
-                    </div>
-                
+                {% endfor %}
             </div>
         </div>
 
         <hr class='hline'>
 
-        
+        {% endif %}
 
-        
+        {% if resume.languages|length %}
 
         <div id='languages' class="sectionBlock">
             <div class='sectionName'>
                 <span>LANGUAGES</span>
             </div>
             <div class='sectionContent'>
-                
-                <span class='language'>Dutch</span>
-                
-                <span class='fluency'><em>(Native speaker)</em></span>
-                
-                <span>,</span>
-                
-                <span class='language'>English</span>
-                
-                <span class='fluency'><em>(Bilingual)</em></span>
-                
-                
-                
+                {% for language in resume.languages %}
+                <span class='language'>{{ language.language }}</span>
+                {% if language.fluency %}
+                <span class='fluency'><em>({{ language.fluency }})</em></span>
+                {% endif %}
+                {% if not loop.last %}<span>,</span>{% endif %}
+                {% endfor %}
             </div>
             <hr class='hline'>
         </div>
-        
+        {% endif %}
 
-        
+        {% if resume.interests|length %}
 
-        <span style="text-align:center; display:block; margin-top:20px; font-size:14px;" id="updateDate"><b>Last updated: </b>May 12, 2023</span>
+        <div id='interests' class="sectionBlock">
+            <div class='sectionName'>
+                <span>INTERESTS</span>
+            </div>
+            <div class='sectionContent'>
+                {% for interest in resume.interests %}
+                    <span class='name'>{{ interest.name }}</span>{% if interest.keywords|length %}<span class='keywords'> <em>[
+                    {% for keyword in interest.keywords %}
+                        {{ keyword }}{{ ", " if not loop.last }}
+                    {% endfor %}
+                    ]</em></span>{% endif %}{{ "<span>, </span>" if not loop.last }}
+                {% endfor %}
+            </div>
+            <hr class='hline'>
+        </div>
+
+        {% endif %}
+
+        <span style="text-align:center; display:block; margin-top:20px; font-size:14px;" id="updateDate"><b>Last updated: </b>{{date}}</span>
         </div>
     </body>
 </html>

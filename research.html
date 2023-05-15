@@ -1,140 +1,35 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/static/simple.css">
-    <title>Ties de Kok</title>
-
-
-</head>
-<body>
-  <header>
-    <h1>Ties de Kok</h1>
-    <p>Assistant Professor in Accounting</p>
-    <p>University of Washington</p>
-    
-    <nav>
-        <a href="/" class="current">About me</a>
-        <a href="/research.html" >Research</a>
-        <a href="/code_and_data.html" >Code & Data</a>
-        <a href="/talks_and_classes.html" >Talks & Classes</a>
-        <a href="/blog_posts.html" >Blog Posts</a>
-        <a href="/Vitae.pdf" target = "_blank" >CV</a>     
-    </nav>
-  </header>
-
-  <main>
+<main>
     <section>
         <h3>Publications</h3>
-        
+        {% for paper in publications %}
             <p style = "margin-bottom: 5px;">
-                <b>How Resilient are Firms' Financial Reporting Processes?</b><br>
-                <i>Management Science - 2023 (<a href = "https://pubsonline.informs.org/doi/abs/10.1287/mnsc.2023.4670" target = "_blank">paper</a>) (<a href = "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4239246" target = "_blank">ssrn</a>) (<a href = "https://github.com/TiesdeKok/mnsc.2023.4670" target = "_blank">code</a>)</i><br>
-                <i>with Ed deHaan, Dawn Matsumoto, and Edgar Rodriguez-Vazquez</i>
+                <b>{{paper.title}}</b><br>
+                <i>{{paper.journal}}{% if paper.year|length %} - {{paper.year}}{% endif %}{% for link_item in paper.links %} (<a href = "{{link_item.href}}" target = "_blank">{{link_item.label}}</a>){% endfor %}</i><br>
+                <i>{{paper.coauthors}}</i>
             </p>
-            
+            {% if paper.abstract|length %}
             <details>
                 <summary>Abstract</summary>
-                <p style="text-align: justify;">The timely flow of financial information is critical for efficient capital market functioning, yet we have little understanding of firms' and auditors' collective abilities to maintain timely financial reporting while under duress. We use COVID as a stress test case to examine whether reporting systems can withstand systemic increases in complex economic events and coordination challenges. Despite COVID-related challenges persisting through 2020 and beyond, we document surprisingly modest average delays in financial reports during COVID, and only in Q1-2020. Reporting timeliness reverts to pre-COVID levels no later than Q2-2020. We find no evidence of meaningful declines in actual reporting quality during COVID, but we do find some evidence consistent with declines in perceived reporting quality. Overall, our findings indicate that current financial reporting processes are remarkably robust, and provide insights about financial reporting more broadly. In particular, given that nearly all firms were able to weather the unprecedented disruptions caused by COVID, our findings imply that most material reporting delays observed outside of COVID are likely due to either a firm's strategic choices or to exceptionally fragile reporting processes.</p>
+                <p style="text-align: justify;">{{paper.abstract}}</p>
             </details>
+            {% endif %}
             
-            
-        
-            <p style = "margin-bottom: 5px;">
-                <b>The Prevalence and Validity of EBITDA as a Performance Measure</b><br>
-                <i>Accounting Auditing Control - 2019 (<a href = "https://www.cairn.info/revue-comptabilite-controle-audit-2019-1-page-55.htm?ref=doi" target = "_blank">paper</a>) (<a href = "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3171131" target = "_blank">ssrn</a>)</i><br>
-                <i>with Arnt Verriest and Jan Bouwens</i>
-            </p>
-            
-            <details>
-                <summary>Abstract</summary>
-                <p style="text-align: justify;">This study evaluates EBITDA as a financial performance measure and investigates the use of EBITDA in financial reporting. First, we take issue with recent comments that both the SEC and the IASB have levied against non-GAAP earnings numbers, and in particular EBITDA. While EBITDA allegedly provides an accurate reflection of the operations and abstracts from how assets are financed, we argue that (net) operating profit already provides this information without the necessity of making subjective adjustments. Also, our evidence suggests that EBITDA paints a rosy picture of the firm's profitability and cash-generating ability. Next, using textual analysis, we investigate the prevalence of EBITDA in financial disclosures based on a large sample of 15,895 annual reports and 51,758 earnings releases from S&P 1500 firms between 2005 and 2016. We find that 14.8% of sample firms disclose and emphasize EBITDA numbers. EBITDA disclosures modestly increase over time and tend to be rather sticky in nature. In our cross-sectional analyses, we find that, consistent with our hypotheses, EBITDA-reporting firms are smaller, more leveraged, more capital-intensive, less profitable and have longer operating cycles than non-EBITDA reporting firms. They also exhibit higher forecast errors and a higher likelihood of missing the analyst forecast benchmark. Additional tests further underscore the opportunistic nature of EBITDA disclosures as we find that these firm characteristics are more strongly associated with the disclosure of adjusted EBITDA measures, and less strongly associated with the disclosure of EBITA and EBIT.</p>
-            </details>
-            
-            
-        
+        {% endfor %}
     </section>
 
     <section>
         <h3 style = "margin-top: 25px;">Working projects</h3>
-        
+        {% for paper in working_projects %}
         <p style = "margin-bottom: 5px;">
-            <b>Generative LLMs and Textual Analysis in Accounting: (Chat)GPT as Research Assistant?</b><br>
-            <i>Solo-authored (<a href = "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4429658" target = "_blank">ssrn</a>) (<a href = "https://github.com/TiesdeKok/gllm_companion" target = "_blank">code</a>)</i><br>
+            <b>{{paper.title}}</b><br>
+            <i>{{paper.coauthors}}{% for link_item in paper.links %} (<a href = "{{link_item.href}}" target = "_blank">{{link_item.label}}</a>){% endfor %}</i><br>
         </p>
-        
+        {% if paper.abstract|length %}
         <details>
             <summary>Abstract</summary>
-            <p style="text-align: justify;">Generative Large Language Models (GLLMs), such as the ChatGPT and GPT-4 models by OpenAI, are emerging as powerful tools for textual analysis tasks in accounting research. GLLMs can solve any textual analysis task solvable using non-generative methods, as well as tasks previously only solvable using human coding. This paper highlights the applications of GLLMs for accounting research and compares it to existing textual analysis methods. I also provide a framework for researchers to effectively utilize GLLMs in their work, addressing key considerations such as model selection, prompt engineering, and construct validity. Furthermore, I highlight the importance of addressing bias, replicability, data privacy, and attributability concerns when employing GLLMs. Finally, I explore current GLLM developments and provide practical guidance and code examples in the appendices. Taken together, this paper equips researchers with the necessary knowledge and tools to harness the potential of GLLMs and editors and reviewers with the knowledge to better evaluate papers who use the GLLM approach.</p>
+            <p style="text-align: justify;">{{paper.abstract}}</p>
         </details>
-        
-    
-        <p style = "margin-bottom: 5px;">
-            <b>Confused Readers: A Modular Approach for Measuring Business Complexity</b><br>
-            <i>with Beth Blankespoor, Darren Bernard, and Sara Toynbee</i><br>
-        </p>
-        
-    
-        <p style = "margin-bottom: 5px;">
-            <b>Corporate Engagement in Public Discourse </b><br>
-            <i>with Beth Blankespoor and Xue Li</i><br>
-        </p>
-        
-    
-        <p style = "margin-bottom: 5px;">
-            <b>Update Frequency and Funder Involvement in Reward Crowdfunding Markets</b><br>
-            <i>Solo-authored (<a href = "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3898885" target = "_blank">ssrn</a>)</i><br>
-        </p>
-        
-        <details>
-            <summary>Abstract</summary>
-            <p style="text-align: justify;">I study the role of product development updates and funder involvement in improving reward crowdfunding outcomes. Reward crowdfunding is a growing source of funding for entrepreneurs with limited access to traditional financing. The limited regulation in reward crowdfunding markets, however, leaves it up to the entrepreneur and the funders to solve their agency problems. Using data from one of the largest reward crowdfunding platforms, I find that entrepreneurs who provide less frequent voluntary updates experience more involvement by funders in the product development process. The entrepreneur responds to this heightened involvement by adjusting their announcement length but not their update frequency. Finally, I find that funders who are responsive in their product development involvement improve project outcomes. Taken together, my results support that voluntary updating and funder involvement can work together to resolve agency frictions in reward crowdfunding markets.</p>
-        </details>
-        
-    
-        <p style = "margin-bottom: 5px;">
-            <b>Can Centralization Improve the Use of Soft Information? Evidence from a Field Study and Lab Experiment</b><br>
-            <i>with Jan Bouwens (<a href = "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2823253" target = "_blank">ssrn</a>)</i><br>
-        </p>
-        
-        <details>
-            <summary>Abstract</summary>
-            <p style="text-align: justify;">This paper studies whether increasing supervision impairs a loan officer's motivation to produce and share information. We first exploit an organizational change at a large European bank and find that centralization improves the use of soft information in evaluating the creditworthiness of small-to-medium size loan applicants. Next, we conduct a lab experiment and find that participants are more likely to accept an increase in supervision when it is motivated by changes in the external environment of the organization. Taken together, our study informs financial institutions, regulators, and academics on the potential benefits of centralization and provides insights on how to achieve employee acceptance when introducing a new supervision policy.</p>
-        </details>
-        
-    
-        <p style = "margin-bottom: 5px;">
-            <b>Measuring and predicting investor disagreement from narrative disclosures using AI</b><br>
-            <i>with Victor van Pelt and Christoph Sextroh</i><br>
-        </p>
-        
-    
+        {% endif %}
+    {% endfor %}
     </section>
 </main>
-
-  <footer>
-    <p>Ties de Kok - Generated using a <a href = "https://github.com/TiesdeKok/TiesdeKok.github.io" target = "_blank">Python script 🐍</a> and <a href = "https://simplecss.org/" target= "_blank">simple.css</a>.</p>
-  </footer>
-
-  <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-    ga('create', 'UA-90851464-1', 'auto');
-    ga('send', 'pageview');
-
-     
-    var links = document.querySelectorAll('a');
-    Array.prototype.map.call(links, function(item) {
-        if (item.host != document.location.host) {
-            item.addEventListener('click', function() {
-                var action = item.getAttribute('data-action') || 'follow';
-                ga('send', 'event', 'outbound', action, item.href);
-            });
-        }
-    });
-    </script>
-</body>
-</html>
