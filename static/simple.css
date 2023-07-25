@@ -631,10 +631,10 @@ progress:indeterminate::-moz-progress-bar {
 /* Ties custom */
 
 .portrait {
-    width: 400px;
-    height: 500px;
-    margin: 20 auto;
-    border-radius: 10%;
+    width: 350px;
+    height: 450px;
+    margin: 10 auto;
+    border-radius: 0%;
     background-size: cover;
     -webkit-background-size: cover;
     background-color: none !important;
