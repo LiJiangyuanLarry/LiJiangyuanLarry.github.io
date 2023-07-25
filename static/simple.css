@@ -632,7 +632,7 @@ progress:indeterminate::-moz-progress-bar {
 
 .portrait {
     width: 400px;
-    /*height: 500px;*/
+    height: 500px;
     margin: 20 auto;
     border-radius: 10%;
     background-size: cover;
