@@ -252,7 +252,7 @@ header > nav a.current {
   box-shadow: 0 8px 18px rgba(31, 41, 51, 0.06);
 }
 
-aside, pre, progress, article, fieldset, section, details, .card {
+aside, pre, progress, article, fieldset, .card {
   background-color: var(--surface);
   border: 1px solid var(--border);
   border-radius: 18px;
@@ -273,8 +273,12 @@ article, fieldset {
 }
 
 section {
-  padding: 1.75rem;
-  margin-bottom: 1.5rem;
+  padding: 1.25rem 0;
+  margin-bottom: 1.25rem;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
 }
 
 section + section {
@@ -288,8 +292,12 @@ article h2:first-child {
 }
 
 details {
-  padding: 0.9rem 1rem;
-  margin-top: 0.75rem;
+  padding: 0.35rem 0 0;
+  margin-top: 0.5rem;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
 }
 
 summary {
@@ -434,6 +442,9 @@ mark {
 
 .intro-card {
   padding: 2rem;
+  background-color: var(--surface);
+  border-radius: 24px;
+  box-shadow: 0 16px 34px rgba(31, 41, 51, 0.06);
 }
 
 .lead {
@@ -476,6 +487,8 @@ mark {
 
 .meta-card {
   padding: 1.25rem 1.35rem;
+  background: color-mix(in srgb, var(--surface) 82%, transparent);
+  border-radius: 18px;
 }
 
 .meta-card h4 {
@@ -492,9 +505,9 @@ mark {
 }
 
 .research-entry + .research-entry {
-  margin-top: 1.25rem;
-  padding-top: 1.25rem;
-  border-top: 1px solid var(--border);
+  margin-top: 1.35rem;
+  padding-top: 1.35rem;
+  border-top: 1px solid color-mix(in srgb, var(--border) 55%, transparent);
 }
 
 .research-entry p:last-child {
