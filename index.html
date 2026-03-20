@@ -5,52 +5,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/static/simple.css">
     <title>李江远 Jiangyuan LI</title>
-
-
 </head>
 <body>
   <header>
     <h1>李江远 LI Jiangyuan</h1>
     <p>金融学副教授 Associate Professor in Finance</p>
     <p>上海财经大学 Shanghai University of Finance and Economics</p>
-    
     <nav>
         <a href="/" class="current">关于我 About me</a>
-        <a href="/research.html" >研究 Research</a>
+        <a href="/research.html">研究 Research</a>
     </nav>
   </header>
 
-  <!--header ends*-->
-<main>
-    <aside class = "portrait" itemprop="image" style="background-image: url('/static/profile.jpg');"></aside>
-    <p class = "writing">你好！👋 我是一名任教于上海财经大学金融学院的副教授。</p>
-        <p class = "writing">Welcome! 👋 I am an Associate Professor of Finance at School of Finance, Shanghai University of Finance and Economics.</p>
-        <p class = "writing">我的研究兴趣包括 My research interests include:</p>
-        <p>
-            <ul>
-                <li>资产定价 Asset Pricing</li>
-                <li>机器学习 Machine Learning</li>
-                <li>中国资本市场专题 Chinese Capital Market</li>
-            </ul>
-        </p>
+  <main>
+    <section class="intro-card">
+      <div class="profile-layout">
+        <aside class="profile-photo" itemprop="image" aria-label="Portrait of Jiangyuan Li" style="background-image: url('/static/profile.jpg');"></aside>
+        <div>
+          <p class="lead">你好！👋 我是一名任教于上海财经大学金融学院的副教授。</p>
+          <p class="lead">Welcome! 👋 I am an Associate Professor of Finance at the School of Finance, Shanghai University of Finance and Economics.</p>
+          <p>我的研究兴趣包括 My research interests include:</p>
+          <ul class="dual-list">
+            <li>资产定价 Asset Pricing</li>
+            <li>机器学习 Machine Learning</li>
+            <li>中国资本市场专题 Chinese Capital Market</li>
+          </ul>
+          <p>该网站分享了我的 <a href="/research.html">研究</a>，也欢迎浏览英文内容了解我的主要研究方向。</p>
+          <p>This website covers my <a href="/research.html">research</a> and provides a concise overview of my academic interests.</p>
+        </div>
+      </div>
 
-    <p>该网站分享了我的<a href = "/research.html">研究</a>。</p>
+      <div class="meta-block">
+        <section class="meta-card">
+          <h4>Contact</h4>
+          <ul class="contact-list">
+            <li>李江远 LI Jiangyuan</li>
+            <li>副教授 Associate Professor</li>
+            <li>上海财经大学金融学院 School of Finance, Shanghai University of Finance and Economics</li>
+            <li>上海市杨浦区武东路100号 200433, No. 100 Wudong Road, Yangpu District, Shanghai, China, 200433</li>
+            <li>Email: lijiangyuan at mail dot shufe dot edu dot cn</li>
+            <li><a href="https://www.linkedin.com/in/jiangyuanli" target="_blank">LinkedIn</a></li>
+          </ul>
+        </section>
 
-    <p>This website covers my <a href = "/research.html">research</a>.</p>
-    <p>可以通过以下方式联系到我: </p>
-    <p>
-        <ul>
-            李江远 LI Jiangyuan<br/>
-            副教授 Associate Professor<br/>
-            上海财经大学金融学院 School of Finance, Shanghai University of Finance and Economics</br>
-            上海市杨浦区武东路100号 200433, No. 100 Wudong Road, Yangpu District, Shagnhai, China, 200433<br/>
-            <li><a href = "mailto:lijiangyuan@mail.shufe.edu.cn" target = "_blank">Email</a></li>
-            <li><a href = "https://www.linkedin.com/in/jiangyuanli" target = "_blank">LinkedIn</a></li>
-        </ul>
-    </p>
+      </div>
+    </section>
+  </main>
 
-</main>
-  <!--footer starts*-->
   <footer>
     <p>李江远 Jiangyuan LI</p>
   </footer>
@@ -63,7 +64,6 @@
     ga('create', 'UA-90851464-1', 'auto');
     ga('send', 'pageview');
 
-     
     var links = document.querySelectorAll('a');
     Array.prototype.map.call(links, function(item) {
         if (item.host != document.location.host) {
