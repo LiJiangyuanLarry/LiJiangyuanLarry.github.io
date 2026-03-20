@@ -1,50 +1,53 @@
 /* Global variables. */
 :root {
-  /* Set sans-serif & mono fonts */
-  --sans-font: -apple-system, BlinkMacSystemFont, "Avenir Next", Avenir,
-    "Nimbus Sans L", Roboto, "Noto Sans", "Segoe UI", Arial, Helvetica,
+  --sans-font: "Inter", "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", -apple-system, BlinkMacSystemFont, "Avenir Next", Avenir,
+    "Nimbus Sans L", Roboto, "Noto Sans", Arial, Helvetica,
     "Helvetica Neue", sans-serif;
+  --serif-font: "Source Serif 4", "Noto Serif SC", "Songti SC", "Times New Roman", serif;
   --mono-font: Consolas, Menlo, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
 
-  /* Default (light) theme */
-  --bg: #fff;
-  --accent-bg: #d8d5c317;
-  --text: #212121;
-  --text-light: #585858;
-  --border: #898EA4;
-  --accent: #0d47a1;
+  --bg: #f8f7f3;
+  --surface: rgba(255, 255, 255, 0.88);
+  --accent-bg: #ece7db;
+  --text: #1f2933;
+  --text-light: #52606d;
+  --border: #d4d9df;
+  --accent: #1f4e79;
+  --accent-strong: #14324d;
+  --shadow: 0 18px 40px rgba(31, 41, 51, 0.08);
   --code: #d81b60;
   --preformatted: #444;
   --marked: #ffdd33;
   --disabled: #efefef;
 }
 
-/* Dark theme */
 @media (prefers-color-scheme: dark) {
   :root {
     color-scheme: dark;
-    --bg: #212121;
-    --accent-bg: #2b2b2b;
-    --text: #dcdcdc;
-    --text-light: #ababab;
-    --accent: #ffb300;
+    --bg: #11161c;
+    --surface: rgba(23, 30, 39, 0.9);
+    --accent-bg: #1a2330;
+    --text: #e5e7eb;
+    --text-light: #b8c1cc;
+    --border: #324152;
+    --accent: #8ab4e6;
+    --accent-strong: #bfd6f2;
+    --shadow: none;
     --code: #f06292;
     --preformatted: #ccc;
     --disabled: #111;
   }
-  /* Add a bit of transparency so light media isn't so glaring in dark mode */
+
   img,
   video {
-    opacity: 0.8;
+    opacity: 0.88;
   }
 }
 
-/* Reset box-sizing */
 *, *::before, *::after {
   box-sizing: border-box;
 }
 
-/* Reset default appearance */
 textarea,
 select,
 input,
@@ -55,126 +58,112 @@ progress {
 }
 
 html {
-  /* Set the font globally */
   font-family: var(--sans-font);
   scroll-behavior: smooth;
 }
 
-/* Make the body a nice central block */
 body {
   color: var(--text);
-  background-color: var(--bg);
-  font-size: 1.15rem;
-  line-height: 1.5;
+  background:
+    radial-gradient(circle at top, rgba(31, 78, 121, 0.08), transparent 30%),
+    var(--bg);
+  font-size: 1.05rem;
+  line-height: 1.75;
   display: grid;
-  grid-template-columns: 1fr min(45rem, 90%) 1fr;
+  grid-template-columns: 1fr min(70rem, calc(100% - 2rem)) 1fr;
   margin: 0;
+  letter-spacing: 0.01em;
 }
+
 body > * {
   grid-column: 2;
 }
 
-/* Make the header bg full width, but the content inline with body */
 body > header {
-  background-color: var(--accent-bg);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.38));
+  backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--border);
   text-align: center;
-  padding: 0 0.5rem 0.5rem 0.5rem;
+  padding: 0 1rem 1rem;
   grid-column: 1 / -1;
 }
 
 body > header h1 {
-
   max-width: 1200px;
-  margin: 1rem auto;
-  padding-top: 1rem;
+  margin: 0 auto 0.65rem;
+  padding-top: 2.5rem;
 }
 
 body > header p {
-  max-width: 40rem;
-  margin: 0.1rem auto;
+  max-width: 42rem;
+  margin: 0.15rem auto;
+  color: var(--text-light);
 }
 
-/* Add a little padding to ensure spacing is correct between content and header > nav */
 main {
-  padding-top: 1.5rem;
+  width: 100%;
+  padding: 2.5rem 0 1rem;
 }
 
 body > footer {
-  margin-top: 2rem;
-  padding: 1rem 1rem 1rem 1rem;
+  margin-top: 2.5rem;
+  padding: 1.25rem 1rem 2rem;
   color: var(--text-light);
-  font-size: 0.9rem;
+  font-size: 0.92rem;
   text-align: center;
   border-top: 1px solid var(--border);
 }
 
-/* Format headers */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+  font-family: var(--serif-font);
+  letter-spacing: -0.015em;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.15;
+}
+
 h1 {
-  font-size: 3rem;
+  font-size: clamp(2.7rem, 5vw, 4rem);
+  font-weight: 650;
 }
 
 h2 {
-  font-size: 2.6rem;
+  font-size: clamp(2rem, 3.5vw, 2.8rem);
   margin-top: 3rem;
 }
 
 h3 {
-  font-size: 2rem;
+  font-size: clamp(1.5rem, 2.4vw, 2rem);
   margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
-h4 {
-  font-size: 1.44rem;
+h4 { font-size: 1.35rem; }
+h5 { font-size: 1.1rem; }
+h6 { font-size: 0.95rem; }
+
+p {
+  margin: 0 0 1rem;
 }
 
-h5 {
-  font-size: 1.15rem;
-}
-
-h6 {
-  font-size: 0.96rem;
-}
-
-/* Prevent long strings from overflowing container */
-p, h1, h2, h3, h4, h5, h6 {
-  overflow-wrap: break-word;
-}
-
-/* Fix line height when title wraps */
-h1,
-h2,
-h3 {
-  line-height: 1.1;
-}
-
-/* Reduce header size on mobile */
-@media only screen and (max-width: 720px) {
-  h1 {
-    font-size: 2.5rem;
-  }
-
-  h2 {
-    font-size: 2.1rem;
-  }
-
-  h3 {
-    font-size: 1.75rem;
-  }
-
-  h4 {
-    font-size: 1.25rem;
-  }
-}
-
-/* Format links & buttons */
 a,
 a:visited {
   color: var(--accent);
+  text-decoration-thickness: 0.08em;
+  text-underline-offset: 0.18em;
 }
 
 a:hover {
-  text-decoration: none;
+  color: var(--accent-strong);
 }
 
 button,
@@ -184,11 +173,11 @@ input[type="reset"],
 input[type="button"],
 label[type="button"] {
   border: none;
-  border-radius: 5px;
+  border-radius: 999px;
   background-color: var(--accent);
   font-size: 1rem;
   color: var(--bg);
-  padding: 0.7rem 0.9rem;
+  padding: 0.7rem 1rem;
   margin: 0.5rem 0;
 }
 
@@ -211,11 +200,8 @@ select:disabled {
   background-color: var(--disabled);
 }
 
-input[type="range"] {
-  padding: 0;
-}
+input[type="range"] { padding: 0; }
 
-/* Set the cursor to '?' on an abbreviation and style the abbreviation to show that there is more information underneath */
 abbr[title] {
   cursor: help;
   text-decoration-line: underline;
@@ -234,71 +220,43 @@ input[type="button"]:focus,
 input[type="button"]:enabled:hover,
 label[type="button"]:focus,
 label[type="button"]:hover {
-  filter: brightness(1.4);
+  filter: brightness(1.08);
   cursor: pointer;
 }
 
-/* Format navigation */
 header > nav {
-  font-size: 1rem;
+  font-size: 0.98rem;
   line-height: 2;
-  padding: 1rem 0 0 0;
-  font-weight: 500;
-}
-
-/* Use flexbox to allow items to wrap, as needed */
-header > nav ul,
-header > nav ol {
-  align-content: space-around;
-  align-items: center;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
-
-/* List items are inline elements, make them behave more like blocks */
-header > nav ul li,
-header > nav ol li {
-  display: inline-block;
+  padding: 1.25rem 0 0;
+  font-weight: 600;
+  letter-spacing: 0.02em;
 }
 
 header > nav a,
 header > nav a:visited {
-  margin: 0 0.5rem 1rem 0.5rem;
-  border: 1px solid var(--border);
-  border-radius: 5px;
+  margin: 0 0.4rem 0.75rem;
+  border: 1px solid transparent;
+  border-radius: 999px;
   color: var(--text);
   display: inline-block;
-  padding: 0.1rem 1rem;
+  padding: 0.35rem 1rem;
   text-decoration: none;
+  background: rgba(255,255,255,0.55);
 }
 
-header > nav a:hover {
-  border-color: var(--accent);
+header > nav a:hover,
+header > nav a.current {
+  border-color: var(--border);
   color: var(--accent);
-  cursor: pointer;
+  background: var(--surface);
+  box-shadow: 0 8px 18px rgba(31, 41, 51, 0.06);
 }
 
-/* Reduce nav side on mobile */
-@media only screen and (max-width: 720px) {
-  header > nav a {
-    border: none;
-    padding: 0;
-    text-decoration: underline;
-    line-height: 1;
-  }
-}
-
-/* Consolidate box styling */
-aside, pre, progress {
-  background-color: var(--accent-bg);
+aside, pre, progress, article, fieldset, .card {
+  background-color: var(--surface);
   border: 1px solid var(--border);
-  border-radius: 5px;
-  margin-bottom: 1rem;
+  border-radius: 18px;
+  box-shadow: var(--shadow);
 }
 
 aside {
@@ -309,71 +267,50 @@ aside {
   float: right;
 }
 
-/* Make aside full-width on mobile */
-@media only screen and (max-width: 720px) {
-  aside {
-    width: 100%;
-    float: none;
-    margin-left: 0;
-  }
-}
-
 article, fieldset {
-  border: 1px solid var(--border);
   padding: 1rem;
-  border-radius: 5px;
   margin-bottom: 1rem;
 }
 
-article h2:first-child,
-section h2:first-child {
-  margin-top: 1rem;
-}
-
 section {
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
-  padding: 2rem 1rem;
-  /*margin: 3rem 0;*/
+  padding: 1.25rem 0;
+  margin-bottom: 1.25rem;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
 }
 
-/* Don't double separators when chaining sections */
-section + section,
-section:first-child {
-  border-top: 0;
-  padding-top: 0;
+section + section {
+  margin-top: 1.5rem;
 }
 
-section:last-child {
-  border-bottom: 0;
-  padding-bottom: 0;
+section h2:first-child,
+section h3:first-child,
+article h2:first-child {
+  margin-top: 0;
 }
 
 details {
-  padding: 0.7rem 1rem;
+  padding: 0.35rem 0 0;
+  margin-top: 0.5rem;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
 }
 
 summary {
   cursor: pointer;
-  font-weight: bold;
-  /*padding: 0.7rem 1rem;*/
-  margin: -0.7rem -1rem;
-  word-break: break-all;
+  font-weight: 700;
+  margin: -0.1rem 0;
+  word-break: break-word;
 }
 
 details[open] > summary + * {
-  margin-top: 0;
+  margin-top: 0.8rem;
 }
 
-details[open] > summary {
-  margin-bottom: 0.5rem;
-}
-
-details[open] > :last-child {
-  margin-bottom: 0;
-}
-
-/* Format tables */
 table {
   border-collapse: collapse;
   display: block;
@@ -386,7 +323,7 @@ td,
 th {
   border: 1px solid var(--border);
   text-align: left;
-  padding: 0.5rem;
+  padding: 0.6rem;
 }
 
 th {
@@ -395,16 +332,9 @@ th {
 }
 
 tr:nth-child(even) {
-  /* Set every other cell slightly darker. Improves readability. */
-  background-color: var(--accent-bg);
+  background-color: color-mix(in srgb, var(--accent-bg) 60%, transparent);
 }
 
-table caption {
-  font-weight: bold;
-  margin-bottom: 0.5rem;
-}
-
-/* Format forms */
 textarea,
 select,
 input {
@@ -420,24 +350,18 @@ input {
   max-width: 100%;
   display: inline-block;
 }
-label {
-  display: block;
-}
-textarea:not([cols]) {
-  width: 100%;
-}
 
-/* Add arrow to drop-down */
+label { display: block; }
+textarea:not([cols]) { width: 100%; }
+
 select:not([multiple]) {
-  background-image: linear-gradient(45deg, transparent 49%, var(--text) 51%),
-    linear-gradient(135deg, var(--text) 51%, transparent 49%);
+  background-image: linear-gradient(45deg, transparent 49%, var(--text) 51%), linear-gradient(135deg, var(--text) 51%, transparent 49%);
   background-position: calc(100% - 15px), calc(100% - 10px);
   background-size: 5px 5px, 5px 5px;
   background-repeat: no-repeat;
   padding-right: 25px;
 }
 
-/* checkbox and radio button style */
 input[type="checkbox"],
 input[type="radio"] {
   vertical-align: middle;
@@ -450,17 +374,10 @@ input[type="radio"] + label {
   display: inline-block;
 }
 
-input[type="radio"] {
-  border-radius: 100%;
-}
-
+input[type="radio"] { border-radius: 100%; }
 input[type="checkbox"]:checked,
-input[type="radio"]:checked {
-  background-color: var(--accent);
-}
-
+input[type="radio"]:checked { background-color: var(--accent); }
 input[type="checkbox"]:checked::after {
-  /* Creates a rectangle with colored right and bottom borders which is rotated to look like a check mark */
   content: " ";
   width: 0.18em;
   height: 0.32em;
@@ -475,7 +392,6 @@ input[type="checkbox"]:checked::after {
   transform: rotate(45deg);
 }
 input[type="radio"]:checked::after {
-  /* creates a colored circle for the checked radio button  */
   content: " ";
   width: 0.25em;
   height: 0.25em;
@@ -487,186 +403,176 @@ input[type="radio"]:checked::after {
   font-size: 32px;
 }
 
-/* Makes input fields wider on smaller screens */
-@media only screen and (max-width: 720px) {
-  textarea,
-  select,
-  input {
-    width: 100%;
-  }
-}
-
-/* Set a height for color input */
 input[type="color"] {
   height: 2.5rem;
-  padding:  0.2rem;
+  padding: 0.2rem;
 }
 
-/* do not show border around file selector button */
-input[type="file"] {
-  border: 0;
-}
+input[type="file"] { border: 0; }
 
-/* Misc body elements */
 hr {
   border: none;
   height: 1px;
   background: var(--border);
-  margin: 1rem auto;
+  margin: 1.5rem auto;
 }
 
 mark {
   padding: 2px 5px;
   border-radius: 4px;
-  background-color: var(--marked);
 }
 
-img,
-video {
-  max-width: 100%;
-  height: auto;
-  border-radius: 5px;
+.profile-layout {
+  display: grid;
+  grid-template-columns: minmax(220px, 280px) minmax(0, 1fr);
+  gap: 2rem;
+  align-items: start;
 }
 
-figure {
-  margin: 0;
-  text-align: center;
-}
-
-figcaption {
-  font-size: 0.9rem;
-  color: var(--text-light);
-  margin-bottom: 1rem;
-}
-
-blockquote {
-  margin: 2rem 0 2rem 2rem;
-  padding: 0.4rem 0.8rem;
-  border-left: 0.35rem solid var(--accent);
-  color: var(--text-light);
-  font-style: italic;
-}
-
-cite {
-  font-size: 0.9rem;
-  color: var(--text-light);
-  font-style: normal;
-}
-
-dt {
-    color: var(--text-light);
-}
-
-/* Use mono font for code elements */
-code,
-pre,
-pre span,
-kbd,
-samp {
-  font-family: var(--mono-font);
-  color: var(--code);
-}
-
-kbd {
-    color: var(--preformatted);
-    border: 1px solid var(--preformatted);
-    border-bottom: 3px solid var(--preformatted);
-    border-radius: 5px;
-    padding: 10px;
-    padding-right: 30px;
-    padding-left: 30px;
-    margin-top: 20px;
-    display: inline-block;
-    width: 100%;
-    text-align: center;
-}
-
-pre {
-  padding: 1rem 1.4rem;
-  max-width: 100%;
-  overflow: auto;
-  color: var(--preformatted);
-}
-
-/* Fix embedded code within pre */
-pre code {
-  color: var(--preformatted);
-  background: none;
-  margin: 0;
-  padding: 0;
-}
-
-/* Progress bars */
-/* Declarations are repeated because you */
-/* cannot combine vendor-specific selectors */
-progress {
+.profile-photo {
+  aspect-ratio: 4 / 5;
   width: 100%;
+  min-height: 320px;
+  background-position: center;
+  background-size: cover;
+  border-radius: 22px;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
 }
 
-progress:indeterminate {
-  background-color: var(--accent-bg);
+.intro-card {
+  padding: 2rem;
+  background-color: var(--surface);
+  border-radius: 24px;
+  box-shadow: 0 16px 34px rgba(31, 41, 51, 0.06);
 }
 
-progress::-webkit-progress-bar {
-  border-radius: 5px;
-  background-color: var(--accent-bg);
+.lead {
+  font-size: 1.12rem;
+  color: var(--text-light);
 }
 
-progress::-webkit-progress-value {
-  border-radius: 5px;
-  background-color: var(--accent);
+.dual-list,
+.contact-list,
+.research-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
-progress::-moz-progress-bar {
-  border-radius: 5px;
-  background-color: var(--accent);
-  transition-property: width;
-  transition-duration: 0.3s;
+.dual-list li,
+.contact-list li,
+.research-list li {
+  margin-bottom: 0.8rem;
 }
 
-progress:indeterminate::-moz-progress-bar {
-  background-color: var(--accent-bg);
+.dual-list li {
+  padding-left: 1.1rem;
+  position: relative;
 }
 
-/* Ties custom */
-
-.portrait {
-    width: 350px;
-    height: 450px;
-    margin: 10 auto;
-    border-radius: 0%;
-    background-size: cover;
-    -webkit-background-size: cover;
-    background-color: none !important;
-    border: none !important;
+.dual-list li::before {
+  content: "•";
+  color: var(--accent);
+  position: absolute;
+  left: 0;
 }
 
-/* margin-left: 50px !important; */
+.meta-block {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
 
-/* Move portrait to the left if desktop width */
-@media only screen and (min-width: 720px) {
-  .portrait {
-    margin-left: 50px !important;
+.meta-card {
+  padding: 1.25rem 1.35rem;
+  background: color-mix(in srgb, var(--surface) 82%, transparent);
+  border-radius: 18px;
+}
+
+.meta-card h4 {
+  margin: 0 0 0.65rem;
+  font-size: 1rem;
+  font-family: var(--sans-font);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text-light);
+}
+
+.contact-list a {
+  font-weight: 600;
+}
+
+.research-entry + .research-entry {
+  margin-top: 1.35rem;
+  padding-top: 1.35rem;
+  border-top: 1px solid color-mix(in srgb, var(--border) 55%, transparent);
+}
+
+.research-entry p:last-child {
+  margin-bottom: 0;
+}
+
+.paper-title {
+  font-size: 1.08rem;
+  font-weight: 700;
+  color: var(--accent-strong);
+}
+
+.paper-meta {
+  color: var(--text-light);
+}
+
+.abstract-text {
+  text-align: justify;
+  color: var(--text-light);
+}
+
+@media only screen and (max-width: 900px) {
+  .profile-layout,
+  .meta-block {
+    grid-template-columns: 1fr;
+  }
+
+  .profile-photo {
+    min-height: 280px;
+    max-width: 320px;
   }
 }
-
-/* Move portrait to the center if mobile width */
 
 @media only screen and (max-width: 720px) {
-  .portrait {
-    
-    margin: auto;
+  body {
+    grid-template-columns: 1fr min(100%, calc(100% - 1rem)) 1fr;
+    font-size: 1rem;
   }
-}
 
+  body > header {
+    padding: 0 0.75rem 0.85rem;
+  }
 
-.writing {
-    text-align: justify !important;
-}
+  header > nav a {
+    border: none;
+    background: transparent;
+    box-shadow: none;
+    padding: 0.15rem 0.35rem;
+    text-decoration: underline;
+  }
 
+  aside {
+    width: 100%;
+    float: none;
+    margin-left: 0;
+  }
 
-.socials {
-  max-width: 100px;
-  background-color: none !important;
-  content: "\f09b";
+  section,
+  .intro-card {
+    padding: 1.25rem;
+  }
+
+  textarea,
+  select,
+  input {
+    width: 100%;
+  }
 }
